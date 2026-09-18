@@ -2,5 +2,5 @@ extends Interactable
 
 
 func interact(player: Node) -> void:
-	print("Interação funcionando!")
-	print("Jogador: ", player.name)
+	print("interacao funcionando!")
+	print("entidade: ", player.name)

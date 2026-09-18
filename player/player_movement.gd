@@ -5,7 +5,7 @@ extends Node
 @export var deceleration: float = 1200.0
 
 @onready var player: CharacterBody2D = get_parent()
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $"../Sprite2D"
 
 func physics_update(delta: float) -> void:
 	var input_direction := Input.get_vector(
