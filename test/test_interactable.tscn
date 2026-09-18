@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://beigflsu53cje"]
+
+[ext_resource type="Script" uid="uid://bm8vuepqoj3as" path="res://test/test_interactable.gd" id="1_cet6i"]
+[ext_resource type="Texture2D" uid="uid://biteovyjfjbpv" path="res://temp_resources/sphere.png" id="2_l0rmr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnrag"]
+size = Vector2(32, 32)
+
+[node name="TestInteractable" type="Area2D" unique_id=1138922544]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_cet6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2059219558]
+texture = ExtResource("2_l0rmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552403282]
+shape = SubResource("RectangleShape2D_pnrag")

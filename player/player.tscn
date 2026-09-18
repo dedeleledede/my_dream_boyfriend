@@ -1,3 +1,38 @@
 [gd_scene format=3 uid="uid://dl4ftcxqxinig"]
 
-[node name="Player" type="Node2D" unique_id=2063318523]
+[ext_resource type="Texture2D" uid="uid://cb424dtv3wber" path="res://temp_resources/starter_player.png" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://db5dpm33ohmqv" path="res://player/player.gd" id="1_yw30f"]
+[ext_resource type="Script" uid="uid://cqch4f08tlkwk" path="res://player/player_movement.gd" id="3_qjkh3"]
+[ext_resource type="Script" uid="uid://dno12tvvcs3sl" path="res://player/player_interaction.gd" id="4_g6k8r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrag"]
+radius = 15.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h37ey"]
+radius = 35.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1530642053]
+collision_layer = 2
+script = ExtResource("1_yw30f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1853138295]
+texture = ExtResource("1_oul6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235075423]
+shape = SubResource("CapsuleShape2D_pnrag")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=930142171]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1584141809]
+shape = SubResource("CircleShape2D_h37ey")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=180946210]
+
+[node name="Movement" type="Node" parent="." unique_id=1720584079]
+script = ExtResource("3_qjkh3")
+
+[node name="Interaction" type="Node" parent="." unique_id=1221370439]
+script = ExtResource("4_g6k8r")

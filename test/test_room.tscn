@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://64vxlrikrmg"]
+
+[ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="1_qlpi1"]
+[ext_resource type="PackedScene" uid="uid://beigflsu53cje" path="res://test/test_interactable.tscn" id="2_8gxbd"]
+
+[node name="TestRoom" type="Node2D" unique_id=67773715]
+
+[node name="Player" parent="." unique_id=1530642053 instance=ExtResource("1_qlpi1")]
+
+[node name="TestInteractable" parent="." unique_id=875925978 instance=ExtResource("2_8gxbd")]
