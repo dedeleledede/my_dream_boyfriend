@@ -4,8 +4,9 @@ extends Node
 @export var acceleration: float = 900.0
 @export var deceleration: float = 1200.0
 
-@onready var player: CharacterBody2D = get_parent()
+@onready var player: Player = get_parent()
 @onready var sprite: Sprite2D = $"../Sprite2D"
+
 
 func physics_update(delta: float) -> void:
 	var input_direction := Input.get_vector(
@@ -26,10 +27,14 @@ func physics_update(delta: float) -> void:
 		target_velocity,
 		change_speed * delta
 	)
-	
-	var input_horizontal: float = Input.get_axis("move_left", "move_right")
-	
-	if input_horizontal != 0:
-		sprite.flip_h = input_horizontal < 0
+
+	var input_horizontal: float = Input.get_axis(
+		"move_left",
+		"move_right"
+	)
+
+	if input_horizontal != 0.0:
+		player.facing_horizontal = 1 if input_horizontal > 0.0 else -1
+		sprite.flip_h = player.facing_horizontal < 0
 
 	player.move_and_slide()
