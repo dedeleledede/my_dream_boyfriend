@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var facing_horizontal: int = 1
+var facing_direction: Vector2 = Vector2.DOWN
 
 @onready var movement: Node = $Movement
 @onready var interaction: Node = $Interaction

@@ -1,5 +1,8 @@
 extends Node
 
+@export_range(-1.0, 1.0, 0.05)
+var facing_threshold: float = 0.65
+
 @onready var player: Player = get_parent()
 @onready var interaction_area: Area2D = $"../InteractionArea"
 
@@ -14,15 +17,13 @@ func try_interact() -> void:
 	if Game.state != Game.State.EXPLORATION:
 		return
 
-	var interactable := _get_nearest_interactable()
-
-	if interactable == null:
+	if current_interactable == null:
 		return
 
-	if not interactable.can_interact(player):
+	if not current_interactable.can_interact(player):
 		return
 
-	interactable.interact(player)
+	current_interactable.interact(player)
 
 
 func _update_current_interactable() -> void:
@@ -77,19 +78,18 @@ func _get_nearest_interactable() -> Interactable:
 
 
 func _is_facing_interactable(interactable: Interactable) -> bool:
-	var offset := interactable.global_position - player.global_position
+	var to_interactable := (
+		interactable.global_position
+		- player.global_position
+	)
 
-	# Caso predominantemente vertical:
-	# não exigimos direção horizontal.
-	if abs(offset.y) >= abs(offset.x):
+	if to_interactable.length_squared() == 0.0:
 		return true
 
-	# Objeto à direita.
-	if offset.x > 0.0:
-		return player.facing_horizontal > 0
+	var direction_to_interactable := to_interactable.normalized()
 
-	# Objeto à esquerda.
-	if offset.x < 0.0:
-		return player.facing_horizontal < 0
+	var facing_amount := player.facing_direction.dot(
+		direction_to_interactable
+	)
 
-	return true
+	return facing_amount >= facing_threshold

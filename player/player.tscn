@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dl4ftcxqxinig"]
 
-[ext_resource type="Texture2D" uid="uid://cb424dtv3wber" path="res://temp_resources/starter_player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://db5dpm33ohmqv" path="res://player/player.gd" id="1_yw30f"]
+[ext_resource type="Texture2D" uid="uid://dx23cryneo3vi" path="res://temp_resources/player_side.png" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://cqch4f08tlkwk" path="res://player/player_movement.gd" id="3_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://bk7tx6na8k8jw" path="res://temp_resources/player_front.png" id="4_boad6"]
 [ext_resource type="Script" uid="uid://dno12tvvcs3sl" path="res://player/player_interaction.gd" id="4_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://slknygaddfon" path="res://temp_resources/player_back.png" id="5_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrag"]
 radius = 15.0
@@ -17,7 +19,7 @@ collision_layer = 2
 script = ExtResource("1_yw30f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1853138295]
-texture = ExtResource("1_oul6g")
+texture = ExtResource("2_yw30f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235075423]
 shape = SubResource("CapsuleShape2D_pnrag")
@@ -33,6 +35,9 @@ shape = SubResource("CircleShape2D_h37ey")
 
 [node name="Movement" type="Node" parent="." unique_id=1720584079]
 script = ExtResource("3_qjkh3")
+sprite_front = ExtResource("4_boad6")
+sprite_back = ExtResource("5_rgyib")
+sprite_side = ExtResource("2_yw30f")
 
 [node name="Interaction" type="Node" parent="." unique_id=1221370439]
 script = ExtResource("4_g6k8r")
