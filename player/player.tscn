@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bk7tx6na8k8jw" path="res://temp_resources/player_front.png" id="4_boad6"]
 [ext_resource type="Script" uid="uid://dno12tvvcs3sl" path="res://player/player_interaction.gd" id="4_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://slknygaddfon" path="res://temp_resources/player_back.png" id="5_rgyib"]
+[ext_resource type="Script" uid="uid://dgyb166qjxoe5" path="res://player/player_stamina.gd" id="7_boad6"]
+[ext_resource type="Script" uid="uid://nu7fo8kpfvbs" path="res://player/player_stamina_ui.gd" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrag"]
 radius = 15.0
@@ -41,3 +43,16 @@ sprite_side = ExtResource("2_yw30f")
 
 [node name="Interaction" type="Node" parent="." unique_id=1221370439]
 script = ExtResource("4_g6k8r")
+
+[node name="Stamina" type="Node" parent="." unique_id=1464021878]
+script = ExtResource("7_boad6")
+
+[node name="StaminaUI" type="CanvasLayer" parent="." unique_id=527224037]
+script = ExtResource("8_rgyib")
+
+[node name="StaminaBar" type="ProgressBar" parent="StaminaUI" unique_id=1521110950]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 47.0
+value = 100.0
