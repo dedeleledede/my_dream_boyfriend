@@ -10,8 +10,6 @@ size = Vector2(32, 32)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_cet6i")
-text = "Algo estranho neste objeto.. incrivelmente circular"
-interaction_text = "Examinar"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2059219558]
 texture = ExtResource("2_l0rmr")

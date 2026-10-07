@@ -1,0 +1,9 @@
+extends Node
+
+
+func change_scene(scene_path: String) -> void:
+	if scene_path.is_empty():
+		push_warning("SceneManager: target_scene ta vazio")
+		return
+
+	get_tree().change_scene_to_file(scene_path)

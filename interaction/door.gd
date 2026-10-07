@@ -5,14 +5,21 @@ extends Interactable
 @export var required_item := ""
 @export_file("*.tscn") var target_scene := ""
 
-func interact(_player: Node) -> void:
+@export var locked_text: String = "Está trancada."
+@export var unlocked_text: String = "A porta foi destrancada."
 
+
+func interact(_player: Node) -> void:
 	if locked:
-		if Inventory.has_item(required_item):
-			Inventory.remove_item(required_item)
+		if required_item.is_empty() or Inventory.has_item(required_item):
+			if not required_item.is_empty():
+				Inventory.remove_item(required_item)
+
 			locked = false
+			DialogueController.say("", unlocked_text)
 		else:
-			DialogueController.say("", "Está trancada.")
+			DialogueController.say("", locked_text)
 			return
 
-	SceneManager.change_scene(target_scene)
+	if not target_scene.is_empty():
+		SceneManager.change_scene(target_scene)

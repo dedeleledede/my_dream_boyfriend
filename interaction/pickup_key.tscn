@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cop4qkxcbxqrp"]
+
+[ext_resource type="Script" uid="uid://cu1n2ksm5ci4w" path="res://interaction/pickup.gd" id="1_o36qr"]
+[ext_resource type="Texture2D" uid="uid://c0jvrcl1hba4a" path="res://temp_resources/key.png" id="2_52t7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52t7v"]
+size = Vector2(24, 24)
+
+[node name="PickupKey" type="Area2D" unique_id=1671139198]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_o36qr")
+item_id = "chave_quarto"
+pickup_text = "Pegou a chave do quarto"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709722397]
+shape = SubResource("RectangleShape2D_52t7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1655925585]
+texture = ExtResource("2_52t7v")
+
+[node name="InteractionPrompt" type="Label" parent="." unique_id=427991913]
+offset_left = -5.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = -12.0
+text = "Z"
