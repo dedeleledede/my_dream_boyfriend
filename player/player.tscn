@@ -10,11 +10,11 @@
 [ext_resource type="Script" uid="uid://nu7fo8kpfvbs" path="res://player/player_stamina_ui.gd" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrag"]
-radius = 15.0
-height = 50.0
+radius = 48.0
+height = 102.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h37ey"]
-radius = 35.0
+radius = 116.01724
 
 [node name="Player" type="CharacterBody2D" unique_id=1530642053]
 collision_layer = 2
@@ -24,9 +24,11 @@ script = ExtResource("1_yw30f")
 texture = ExtResource("2_yw30f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235075423]
+position = Vector2(0, 61)
 shape = SubResource("CapsuleShape2D_pnrag")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=930142171]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -34,6 +36,7 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_h37ey")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180946210]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Movement" type="Node" parent="." unique_id=1720584079]
 script = ExtResource("3_qjkh3")

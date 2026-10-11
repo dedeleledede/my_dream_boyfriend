@@ -1,10 +1,10 @@
 extends Node
 
-@export var walk_speed: float = 120.0
-@export var run_speed: float = 190.0
+@export var walk_speed: float = 400.0
+@export var run_speed: float = 650.0
 
-@export var acceleration: float = 900.0
-@export var deceleration: float = 1200.0
+@export var acceleration: float = 6000.0
+@export var deceleration: float = 5000.0
 
 @export_group("Sprites")
 @export var sprite_front: Texture2D
