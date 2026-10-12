@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://wphwxt3jwdal"]
+
+[ext_resource type="Script" uid="uid://bkq7bse0pnold" path="res://interaction/door.gd" id="1_j3phc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jso0p"]
+
+[node name="Door" type="Area2D" unique_id=89830354]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_j3phc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884196608]
+shape = SubResource("RectangleShape2D_jso0p")

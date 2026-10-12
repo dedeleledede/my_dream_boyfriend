@@ -1,7 +1,7 @@
 extends Node
 
 @export_range(-1.0, 1.0, 0.05)
-var facing_threshold: float = 0.65
+var facing_threshold: float = 0.5
 
 @onready var player: Player = get_parent()
 @onready var interaction_area: Area2D = $"../InteractionArea"
@@ -52,9 +52,8 @@ func _set_current_interactable(interactable: Interactable) -> void:
 func _get_nearest_interactable() -> Interactable:
 	var nearest: Interactable = null
 	var nearest_distance := INF
-
+	
 	for area in interaction_area.get_overlapping_areas():
-
 		if not area is Interactable:
 			continue
 
