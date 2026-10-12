@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cbo6hd6vnnklu"]
+
+[ext_resource type="Texture2D" uid="uid://c0t0yxscu6eil" path="res://temp_resources/closet.png" id="1_36dsb"]
+[ext_resource type="Script" uid="uid://6lwicwmsd73b" path="res://interaction/hiding_spot.gd" id="2_w714s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jso0p"]
+size = Vector2(272, 113.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w714s"]
+size = Vector2(235, 93)
+
+[node name="HidingSpot" type="Area2D" unique_id=999036424]
+script = ExtResource("2_w714s")
+metadata/_custom_type_script = "uid://6lwicwmsd73b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=765713210]
+position = Vector2(-1, 132.0625)
+shape = SubResource("RectangleShape2D_jso0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1229442694]
+texture = ExtResource("1_36dsb")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=915210218]
+position = Vector2(0, 125)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1158472399]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1406784400]
+position = Vector2(3.5, 72.5)
+shape = SubResource("RectangleShape2D_w714s")

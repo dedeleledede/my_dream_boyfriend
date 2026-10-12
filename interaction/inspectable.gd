@@ -1,8 +1,8 @@
 class_name Inspectable
 extends Interactable
 
-@export var speaker_name: String = ""
-@export_multiline var text: String = ""
+@export var speaker_name: String = "test"
+@export_multiline var text: String = "test"
 
 
 func interact(_player: Node) -> void:
