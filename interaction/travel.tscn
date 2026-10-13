@@ -1,18 +1,29 @@
 [gd_scene format=3 uid="uid://crg1l6cs100i0"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://bgjwg3xp1fsi1" path="res://interaction/travel.gd" id="1_rl7qn"]
+=======
+[ext_resource type="Script" uid="uid://bgjwg3xp1fsi1" path="res://interaction/travel.gd" id="1_a8hnv"]
+>>>>>>> 8d1fd82f921f76995c4bd560e5d4dd912dfa6700
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jso0p"]
 size = Vector2(31, 214)
 
 [node name="Travel" type="Area2D" unique_id=1917196863]
 collision_mask = 2
+<<<<<<< HEAD
 script = ExtResource("1_rl7qn")
+=======
+script = ExtResource("1_a8hnv")
+>>>>>>> 8d1fd82f921f76995c4bd560e5d4dd912dfa6700
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434407247]
 shape = SubResource("RectangleShape2D_jso0p")
 
+<<<<<<< HEAD
 [node name="Marker2D" type="Marker2D" parent="." unique_id=949411097]
 
+=======
+>>>>>>> 8d1fd82f921f76995c4bd560e5d4dd912dfa6700
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
