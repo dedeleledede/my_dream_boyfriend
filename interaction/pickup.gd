@@ -16,6 +16,7 @@ func interact(_player: Node) -> void:
 	if not pickup_text.is_empty():
 		DialogueController.say("", pickup_text)
 
+	set_prompt_visible(false)
 
 	if destroy_on_pickup:
 		queue_free()

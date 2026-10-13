@@ -120,9 +120,5 @@ tile_set = SubResource("TileSet_kb5vy")
 position = Vector2(-609, -569)
 
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("9_imek5")]
-<<<<<<< HEAD
 position = Vector2(-1054, 126)
-=======
-position = Vector2(-1064, 129)
->>>>>>> 8d1fd82f921f76995c4bd560e5d4dd912dfa6700
 dest_scene = "uid://dycxqtledyan2"

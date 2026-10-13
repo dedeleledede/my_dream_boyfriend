@@ -14,11 +14,7 @@ radius = 48.0
 height = 102.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iivr6"]
-<<<<<<< HEAD
 size = Vector2(161, 162)
-=======
-size = Vector2(161, 127.25)
->>>>>>> 8d1fd82f921f76995c4bd560e5d4dd912dfa6700
 
 [node name="Player" type="CharacterBody2D" unique_id=1530642053]
 collision_layer = 2
@@ -36,11 +32,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1584141809]
-<<<<<<< HEAD
 position = Vector2(0, 63)
-=======
-position = Vector2(2, 44.625)
->>>>>>> 8d1fd82f921f76995c4bd560e5d4dd912dfa6700
 shape = SubResource("RectangleShape2D_iivr6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180946210]
