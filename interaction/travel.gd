@@ -22,4 +22,3 @@ func _physics_process(_delta):
 		get_tree().change_scene_to_file(dest_scene)
 	
 	
-#player.global_position = travel_position.global_position
