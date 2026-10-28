@@ -9,4 +9,5 @@ func interact(player: Node) -> void:
 	
 	player.global_position = hiding_position.global_position
 	player.hide()
+	
 	set_prompt_visible(false)

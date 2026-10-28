@@ -100,4 +100,13 @@ tile_set = SubResource("TileSet_kb5vy")
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("9_trrow")]
 position = Vector2(-3818, -512)
 dest_scene = "uid://64vxlrikrmg"
-door_id = 0
+door_id = 2
+target_door_id = 1
+
+[node name="Marker2D" parent="Travel" index="1" unique_id=949411097]
+position = Vector2(-100, 0)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=671331851]
+position = Vector2(-609, -569)
+
+[editable path="Travel"]

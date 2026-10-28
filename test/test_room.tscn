@@ -96,13 +96,15 @@ position = Vector2(-611, -690)
 hiding_position = NodePath("../Marker2D")
 
 [node name="Player" parent="." unique_id=1530642053 instance=ExtResource("1_qlpi1")]
-position = Vector2(-596, -308)
+position = Vector2(-610, -308)
 
 [node name="TestInteractable" parent="." unique_id=875925978 instance=ExtResource("2_8gxbd")]
 position = Vector2(-402, 172)
+scale = Vector2(3, 3)
 
 [node name="PickupKey" parent="." unique_id=1671139198 instance=ExtResource("3_8gxbd")]
 position = Vector2(-479, -104)
+scale = Vector2(3, 3)
 
 [node name="Enemy" parent="." unique_id=387328203 node_paths=PackedStringArray("player") instance=ExtResource("4_tmjas")]
 position = Vector2(-830, -414)
@@ -116,9 +118,16 @@ navigation_polygon = SubResource("NavigationPolygon_jso0p")
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1721896001 groups=["navigation"]]
 tile_set = SubResource("TileSet_kb5vy")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=456886735]
-position = Vector2(-609, -569)
-
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("9_imek5")]
 position = Vector2(-1054, 126)
 dest_scene = "uid://dycxqtledyan2"
+door_id = 1
+target_door_id = 2
+
+[node name="Marker2D" parent="Travel" index="1" unique_id=949411097]
+position = Vector2(100, 0)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=456886735]
+position = Vector2(-609, -569)
+
+[editable path="Travel"]
