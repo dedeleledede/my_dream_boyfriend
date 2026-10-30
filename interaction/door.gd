@@ -30,6 +30,8 @@ extends Interactable
 
 @export var door_id: int = 0
 @export var target_door_id: int = 0
+@export_enum("Up", "Down", "Left", "Right")
+var enter_direction: int = 0
 
 
 @onready var sprite: Sprite2D = $Sprite2D
@@ -53,6 +55,7 @@ func _enter_tree() -> void:
 	travel_node.dest_scene = dest_scene
 	travel_node.door_id = door_id
 	travel_node.target_door_id = target_door_id
+	travel_node.enter_direction = enter_direction
 
 
 func _ready() -> void:

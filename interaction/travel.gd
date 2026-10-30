@@ -6,6 +6,8 @@ extends Area2D
 
 @export var door_id: int = 0
 @export var target_door_id: int = 0
+@export_enum("Up", "Down", "Left", "Right")
+var enter_direction: int = 0
 
 @export_range(0.0, 1.0) var direction_threshold: float = 0.65
 
@@ -91,11 +93,7 @@ func _try_enter_door() -> void:
 	if input_direction == Vector2.ZERO:
 		return
 
-	# O Travel considera UP sua direção de entrada padrão.
-	# Rotacionar a Door rotaciona essa direção automaticamente.
-	var required_direction := Vector2.UP.rotated(
-		global_rotation
-	).normalized()
+	var required_direction := get_required_direction()
 
 	var movement_alignment := input_direction.normalized().dot(
 		required_direction
@@ -160,3 +158,20 @@ func _on_body_exited(body: Node2D) -> void:
 		player_inside = null
 
 	arrival_locked = false
+
+
+func get_required_direction() -> Vector2:
+	match enter_direction:
+		0:
+			return Vector2.UP
+
+		1:
+			return Vector2.DOWN
+
+		2:
+			return Vector2.LEFT
+
+		3:
+			return Vector2.RIGHT
+
+	return Vector2.UP

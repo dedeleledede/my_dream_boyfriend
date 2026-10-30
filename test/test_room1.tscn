@@ -102,6 +102,7 @@ position = Vector2(-3818, -512)
 dest_scene = "uid://64vxlrikrmg"
 door_id = 2
 target_door_id = 1
+enter_direction = 3
 
 [node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
 position = Vector2(-100, 0)

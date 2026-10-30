@@ -123,12 +123,10 @@ position = Vector2(-1054, 126)
 dest_scene = "uid://dycxqtledyan2"
 door_id = 1
 target_door_id = 2
+enter_direction = 2
 
 [node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
 position = Vector2(100, 0)
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=456886735]
-position = Vector2(-609, -569)
 
 [node name="Door" parent="." unique_id=89830354 instance=ExtResource("10_1ekks")]
 position = Vector2(-645, -1400)
