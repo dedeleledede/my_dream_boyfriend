@@ -10,6 +10,7 @@ size = Vector2(24, 24)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_o36qr")
+pickup_state_id = "quarto_chave_01"
 item_id = "chave_quarto"
 pickup_text = "Pegou a chave do quarto"
 

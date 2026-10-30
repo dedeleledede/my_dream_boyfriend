@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c0t0yxscu6eil" path="res://temp_resources/closet.png" id="3_5hiov"]
 [ext_resource type="Texture2D" uid="uid://c7pndpf3csiqi" path="res://temp_resources/table.png" id="4_xwe8t"]
 [ext_resource type="PackedScene" uid="uid://wphwxt3jwdal" path="res://interaction/door.tscn" id="5_5hiov"]
-[ext_resource type="Texture2D" uid="uid://d1b4aklc43la5" path="res://temp_resources/door_closed.png" id="6_xwe8t"]
-[ext_resource type="Texture2D" uid="uid://cmtjv4a4epour" path="res://temp_resources/door_opened.png" id="7_oavxn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or532"]
 texture = ExtResource("1_p4lm3")
@@ -107,14 +105,11 @@ position = Vector2(3586, -569)
 [node name="Door" parent="." unique_id=89830354 instance=ExtResource("5_5hiov")]
 position = Vector2(116, 106)
 scale = Vector2(4, 4)
-door_state_id = "quarto_01"
-closed_texture = ExtResource("6_xwe8t")
-opened_texture = ExtResource("7_oavxn")
 dest_scene = "uid://64vxlrikrmg"
-door_id = 2
-target_door_id = 1
+door_id = 4
+target_door_id = 3
 
-[node name="Marker2D" parent="Door/Travel" parent_id_path=PackedInt32Array(89830354, 1917196863) index="1" unique_id=949411097]
+[node name="SpawnPoint" parent="Door/Travel" parent_id_path=PackedInt32Array(89830354, 1917196863) index="1" unique_id=949411097]
 position = Vector2(-0.5, -42.5)
 
 [editable path="Door"]
