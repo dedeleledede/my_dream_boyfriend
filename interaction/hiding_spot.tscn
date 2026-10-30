@@ -17,7 +17,7 @@ script = ExtResource("2_w714s")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1229442694]
 texture = ExtResource("1_36dsb")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=915210218]
+[node name="HidingSpot" type="Marker2D" parent="." unique_id=915210218]
 position = Vector2(0, 173)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1158472399]

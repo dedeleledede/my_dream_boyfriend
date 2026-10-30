@@ -7,7 +7,7 @@ extends Area2D
 @export var door_id: int = 0
 @export var target_door_id: int = 0
 
-@onready var spawn_point: Marker2D = $Marker2D
+@onready var spawn_point: Marker2D = $SpawnPoint
 
 var arrival_locked: bool = false
 var active: bool = true

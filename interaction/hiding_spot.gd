@@ -1,7 +1,7 @@
 class_name HidingSpot
 extends Interactable
 
-@export var hiding_position: Marker2D
+@onready var hiding_position: Marker2D = $HidingPoint
 
 func interact(player: Node) -> void:
 	
