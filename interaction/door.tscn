@@ -1,13 +1,52 @@
 [gd_scene format=3 uid="uid://wphwxt3jwdal"]
 
 [ext_resource type="Script" uid="uid://bkq7bse0pnold" path="res://interaction/door.gd" id="1_j3phc"]
+[ext_resource type="Texture2D" uid="uid://d1b4aklc43la5" path="res://temp_resources/door_closed.png" id="2_13n3y"]
+[ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="3_6ik78"]
+[ext_resource type="Texture2D" uid="uid://cmtjv4a4epour" path="res://temp_resources/door_opened.png" id="3_bdquy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jso0p"]
+size = Vector2(72, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnrag"]
+size = Vector2(60, 20)
 
 [node name="Door" type="Area2D" unique_id=89830354]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 0
 script = ExtResource("1_j3phc")
+door_state_id = "quarto_01"
+starts_locked = true
+required_item = "chave_quarto"
+consume_key = true
+closed_texture = ExtResource("2_13n3y")
+opened_texture = ExtResource("3_bdquy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884196608]
 shape = SubResource("RectangleShape2D_jso0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2101796560]
+texture = ExtResource("2_13n3y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=590905828]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=559985602]
+shape = SubResource("RectangleShape2D_pnrag")
+
+[node name="InteractionPrompt" type="Label" parent="." unique_id=2134262965]
+offset_left = -5.0
+offset_top = -45.0
+offset_right = 35.0
+offset_bottom = -22.0
+text = "Z"
+
+[node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("3_6ik78")]
+position = Vector2(0, -26)
+
+[node name="CollisionShape2D" parent="Travel" index="0" unique_id=434407247]
+scale = Vector2(0.9953175, 0.0800007)
+
+[node name="Marker2D" parent="Travel" index="1" unique_id=949411097]
+position = Vector2(0, 70)
+
+[editable path="Travel"]

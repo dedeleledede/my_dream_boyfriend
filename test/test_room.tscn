@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c0t0yxscu6eil" path="res://temp_resources/closet.png" id="6_yokvk"]
 [ext_resource type="PackedScene" uid="uid://cbo6hd6vnnklu" path="res://interaction/hiding_spot.tscn" id="8_imek5"]
 [ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="9_imek5"]
+[ext_resource type="PackedScene" uid="uid://wphwxt3jwdal" path="res://interaction/door.tscn" id="10_1ekks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or532"]
 texture = ExtResource("1_kb5vy")
@@ -130,4 +131,19 @@ position = Vector2(100, 0)
 [node name="Marker2D" type="Marker2D" parent="." unique_id=456886735]
 position = Vector2(-609, -569)
 
+[node name="Door" parent="." unique_id=89830354 instance=ExtResource("10_1ekks")]
+position = Vector2(-645, -1400)
+scale = Vector2(4, 4)
+dest_scene = "uid://bn0h4ijn3j5m1"
+door_id = 1
+target_door_id = 2
+
+[node name="CollisionShape2D" parent="Door/StaticBody2D" parent_id_path=PackedInt32Array(89830354, 590905828) index="0" unique_id=559985602]
+position = Vector2(-0.5, 21)
+
+[node name="CollisionShape2D" parent="Door/Travel" parent_id_path=PackedInt32Array(89830354, 1917196863) index="0" unique_id=434407247]
+position = Vector2(0.24999999, 50.5)
+
 [editable path="Travel"]
+[editable path="Door"]
+[editable path="Door/Travel"]

@@ -5,7 +5,7 @@ var previous_door_id: int = -1
 var target_door_id: int = -1
 
 var is_transitioning: bool = false
-
+var unlocked_doors: Dictionary = {}
 
 func travel_to(
 	scene_path: String,
@@ -60,3 +60,17 @@ func consume_arrival(door_id: int) -> bool:
 
 func finish_transition() -> void:
 	is_transitioning = false
+
+
+func unlock_door(door_id: String) -> void:
+	if door_id.is_empty():
+		return
+
+	unlocked_doors[door_id] = true
+
+
+func is_door_unlocked(door_id: String) -> bool:
+	if door_id.is_empty():
+		return false
+
+	return unlocked_doors.has(door_id)

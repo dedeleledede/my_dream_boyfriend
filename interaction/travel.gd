@@ -1,3 +1,4 @@
+class_name Travel
 extends Area2D
 
 
@@ -8,49 +9,53 @@ extends Area2D
 
 @onready var spawn_point: Marker2D = $Marker2D
 
-
 var arrival_locked: bool = false
+var active: bool = true
+var arrived_here: bool = false
 
 
 func _ready() -> void:
 	if not SceneManager.consume_arrival(door_id):
 		return
 
+	arrived_here = true
 	arrival_locked = true
+	monitoring = false
 
-	var player := get_parent().get_node_or_null("Player") as Player
+	var current_scene := get_tree().current_scene
+	var player := current_scene.get_node_or_null("Player") as Player
 
 	if player == null:
-		push_warning("Travel: nao encontrou Player")
+		push_warning("Travel: não encontrou Player.")
 		SceneManager.finish_transition()
+		arrival_locked = false
 		return
-
-	monitoring = false
 
 	player.global_position = spawn_point.global_position
 
-	print(
-		"SPAWN: door ",
-		door_id,
-		" em ",
-		spawn_point.global_position
-	)
-
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 
-	monitoring = true
+	set_deferred("monitoring", active)
 
 	await get_tree().physics_frame
 
 	SceneManager.finish_transition()
 
-	if not overlaps_body(player):
+	if not active or not overlaps_body(player):
 		arrival_locked = false
+
+
+func set_active(value: bool) -> void:
+	active = value
+	set_deferred("monitoring", value)
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
+		return
+
+	if not active:
 		return
 
 	if arrival_locked:
@@ -60,7 +65,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	if dest_scene.is_empty():
-		push_warning("Travel: dest_scene esta vazio")
+		push_warning("Travel: dest_scene está vazio.")
 		return
 
 	set_deferred("monitoring", false)

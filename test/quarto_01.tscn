@@ -1,0 +1,121 @@
+[gd_scene format=4 uid="uid://bn0h4ijn3j5m1"]
+
+[ext_resource type="Texture2D" uid="uid://x3ag538kcjmq" path="res://temp_resources/area0placeholder.png" id="1_p4lm3"]
+[ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="2_7ibqd"]
+[ext_resource type="Texture2D" uid="uid://c0t0yxscu6eil" path="res://temp_resources/closet.png" id="3_5hiov"]
+[ext_resource type="Texture2D" uid="uid://c7pndpf3csiqi" path="res://temp_resources/table.png" id="4_xwe8t"]
+[ext_resource type="PackedScene" uid="uid://wphwxt3jwdal" path="res://interaction/door.tscn" id="5_5hiov"]
+[ext_resource type="Texture2D" uid="uid://d1b4aklc43la5" path="res://temp_resources/door_closed.png" id="6_xwe8t"]
+[ext_resource type="Texture2D" uid="uid://cmtjv4a4epour" path="res://temp_resources/door_opened.png" id="7_oavxn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or532"]
+texture = ExtResource("1_p4lm3")
+texture_region_size = Vector2i(128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -34, 28, -35, 27, 64, -64, 64)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, -34, -28, -35, -27, 64, 64, 64)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, 64, 64, 34, 28, 35, 27, -64, -64, -64)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, 64, -64, 64, -64, 34, -28, 35, -27, -64, 64, -64)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4xmqs"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_or532")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jso0p"]
+vertices = PackedVector2Array(866.89844, 127.359375, 802.72656, 1094.6719, 572, 700, 572, 452, 572, -68, 824.71875, -805.3672, 572, -572, -851.64844, -758.6172, 324, -572, -209, 1125.1563, 324, 700, 196, 60, 324, 452, -209, 144.42188, -196, -68, 196, -316, -196, -316, 324, -316, -324, -316, -324, -572, 444, 60, 444, -68, -572, -68, -861.3594, 94.46875, -572, -572)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(7, 5, 6, 8), PackedInt32Array(2, 1, 9, 10), PackedInt32Array(11, 12, 10, 9, 13, 14), PackedInt32Array(15, 11, 14, 16), PackedInt32Array(8, 17, 15), PackedInt32Array(16, 18, 19, 8), PackedInt32Array(20, 21, 4, 3), PackedInt32Array(20, 3, 12, 11), PackedInt32Array(22, 14, 13, 23), PackedInt32Array(22, 23, 7, 24), PackedInt32Array(8, 15, 16), PackedInt32Array(7, 8, 19), PackedInt32Array(7, 19, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-911, -817, -922, 150, -269, 200, -269, 1187, 859, 1153, 927, 128, 882, -867)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 60.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ekks"]
+texture = ExtResource("3_5hiov")
+texture_region_size = Vector2i(128, 128)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hj67q"]
+texture = ExtResource("4_xwe8t")
+texture_region_size = Vector2i(128, 128)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_kb5vy"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_hj67q")
+sources/0 = SubResource("TileSetAtlasSource_1ekks")
+
+[node name="TestRoom" type="Node2D" unique_id=67773715]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1733249371 groups=["navigation"]]
+position = Vector2(4195, 0)
+tile_map_data = PackedByteArray("AADb//r/AQAFAAEAAADb//v/AQAFAAIAAADb//z/AQACAAEAAADb//3/AQACAAEAAADb//7/AQACAAEAAADb////AQACAAEAAADc//n/AQAFAAAAAADc//r/AQAFAAEAAADc//v/AQAFAAIAAADc//z/AQACAAEAAADc//3/AQACAAEAAADc//7/AQACAAEAAADc////AQACAAEAAADd//n/AQAFAAAAAADd//r/AQAFAAEAAADd//v/AQAFAAIAAADd//z/AQACAAEAAADd//3/AQACAAEAAADd//7/AQACAAEAAADd////AQACAAEAAADe//n/AQAFAAAAAADe//r/AQAFAAEAAADe//v/AQAFAAIAAADe//z/AQACAAEAAADe//3/AQACAAEAAADe//7/AQACAAEAAADe////AQACAAEAAADf//n/AQAFAAAAAADf//r/AQAFAAEAAADf//v/AQAFAAIAAADf//z/AQACAAEAAADf//3/AQACAAEAAADf//7/AQACAAEAAADf////AQACAAEAAADg//n/AQAFAAAAAADg//r/AQAFAAEAAADg//v/AQAFAAIAAADg//z/AQACAAEAAADg//3/AQACAAEAAADg//7/AQACAAEAAADg////AQACAAEAAADh//n/AQAFAAAAAADh//r/AQAFAAEAAADh//v/AQAFAAIAAADh//z/AQACAAEAAADh//3/AQACAAEAAADh//7/AQACAAEAAADh////AQACAAEAAADi//n/AQAFAAAAAADi//r/AQAFAAEAAADi//v/AQAFAAIAAADi//z/AQACAAEAAADi//3/AQACAAEAAADi//7/AQACAAEAAADi////AQACAAEAAADb/wAAAQABAAIAAADc/wAAAQABAAIAAADd/wAAAQABAAIAAADe/wAAAQABAAIAAADf/wAAAQABAAIAAADg/wAAAQABAAIAAADh/wAAAQABAAIAAADi/wAAAQABAAIAAAAEAOz/AQAAAAIAAAAFAOz/AQABAAIAAAAGAOz/AQABAAIAAAAHAOz/AQABAAIAAAAIAOz/AQABAAIAAAAJAOz/AQABAAIAAAAKAOz/AQABAAIAAAALAOz/AQADAAMAAADj//3/AQACAAEAAADj//7/AQACAAEAAADj////AQACAAEAAADk////AQACAAEAAADk//7/AQACAAEAAADk//3/AQACAAEAAADj//z/AQACAAEAAADk//z/AQACAAEAAADk//v/AQAFAAIAAADj//v/AQAFAAIAAADk//r/AQAFAAEAAADj//r/AQAFAAEAAADk//n/AQAFAAAAAADj//n/AQAFAAAAAADl//n/AQAGAAAAAADa//r/AQAGAAIAAADa//v/AQAGAAMAAADa//z/AQABAAAAAADa//3/AQABAAAAAADa////AQAGAAMAAADl////AQAHAAMAAADl//r/AQAHAAIAAADl/wAAAQADAAMAAADk/wAAAQABAAIAAADj/wAAAQABAAIAAADa/wAAAQAAAAIAAADa//7/AQAGAAIAAADl//v/AQAHAAMAAADl//z/AQADAAIAAADl//3/AQADAAIAAADl//7/AQAHAAIAAADb//n/AQAFAAAAAADa//n/AQAEAAAAAAA=")
+tile_set = SubResource("TileSet_4xmqs")
+
+[node name="Player" parent="." unique_id=1530642053 instance=ExtResource("2_7ibqd")]
+position = Vector2(106, -127)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=365450202]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_jso0p")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1721896001 groups=["navigation"]]
+position = Vector2(4195, 0)
+tile_set = SubResource("TileSet_kb5vy")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=671331851]
+position = Vector2(3586, -569)
+
+[node name="Door" parent="." unique_id=89830354 instance=ExtResource("5_5hiov")]
+position = Vector2(116, 106)
+scale = Vector2(4, 4)
+door_state_id = "quarto_01"
+closed_texture = ExtResource("6_xwe8t")
+opened_texture = ExtResource("7_oavxn")
+dest_scene = "uid://64vxlrikrmg"
+door_id = 2
+target_door_id = 1
+
+[node name="Marker2D" parent="Door/Travel" parent_id_path=PackedInt32Array(89830354, 1917196863) index="1" unique_id=949411097]
+position = Vector2(-0.5, -42.5)
+
+[editable path="Door"]
+[editable path="Door/Travel"]
