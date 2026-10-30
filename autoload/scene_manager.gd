@@ -7,10 +7,13 @@ var target_door_id: int = -1
 var is_transitioning: bool = false
 var unlocked_doors: Dictionary = {}
 
+var previous_facing_direction: Vector2 = Vector2.DOWN
+
 func travel_to(
 	scene_path: String,
 	from_door_id: int,
-	to_door_id: int
+	to_door_id: int,
+	facing_direction: Vector2
 ) -> void:
 	if is_transitioning:
 		return
@@ -23,6 +26,7 @@ func travel_to(
 
 	previous_door_id = from_door_id
 	target_door_id = to_door_id
+	previous_facing_direction = facing_direction
 
 	print(
 		"TRAVEL: ",
