@@ -21,6 +21,7 @@ extends Interactable
 
 @export var closed_texture: Texture2D
 @export var opened_texture: Texture2D
+@export var entry_animation_time: float = 0.15
 
 
 @export_group("Travel")
@@ -59,53 +60,50 @@ func _ready() -> void:
 
 	locked = starts_locked
 
-	if SceneManager.is_door_unlocked(door_state_id):
+	if SaveManager.is_door_unlocked(door_state_id):
 		locked = false
 
-	# Se acabamos de chegar nesta sala por esta porta,
-	# ela deve estar aberta.
-	if travel.arrived_here:
-		locked = false
+	_set_closed_visual()
 
-		SceneManager.unlock_door(door_state_id)
-
-		_set_opened(true)
+	if locked:
+		blocker.set_deferred("disabled", false)
+		travel.set_active(false)
 	else:
-		_set_opened(false)
+		blocker.set_deferred("disabled", true)
+		travel.set_active(true)
 
 
 func can_interact(_player: Node) -> bool:
-	return not opened
+	return locked
 
 
 func interact(_player: Node) -> void:
-	if opened:
+	if not locked:
 		return
 
-	if locked:
-		if required_item.is_empty():
-			DialogueController.say("", locked_text)
-			return
-
-		if not Inventory.has_item(required_item):
-			DialogueController.say("", locked_text)
-			return
-
-		if consume_key:
-			Inventory.remove_item(required_item)
-
-		locked = false
-
-		SceneManager.unlock_door(door_state_id)
-
-		_set_opened(true)
-
-		if not unlocked_text.is_empty():
-			DialogueController.say("", unlocked_text)
-
+	if required_item.is_empty():
+		DialogueController.say("", locked_text)
 		return
 
-	_set_opened(true)
+	if not Inventory.has_item(required_item):
+		DialogueController.say("", locked_text)
+		return
+
+	if consume_key:
+		Inventory.remove_item(required_item)
+
+	locked = false
+
+	SaveManager.unlock_door(door_state_id)
+
+	blocker.set_deferred("disabled", true)
+
+	travel.set_active(true)
+
+	set_prompt_visible(false)
+
+	if not unlocked_text.is_empty():
+		DialogueController.say("", unlocked_text)
 
 
 func _set_opened(value: bool) -> void:
@@ -128,3 +126,17 @@ func _set_opened(value: bool) -> void:
 		blocker.set_deferred("disabled", false)
 
 		travel.set_active(false)
+
+
+func play_entry_animation() -> void:
+	if opened_texture != null:
+		sprite.texture = opened_texture
+
+	await get_tree().create_timer(
+		entry_animation_time
+	).timeout
+
+
+func _set_closed_visual() -> void:
+	if closed_texture != null:
+		sprite.texture = closed_texture
