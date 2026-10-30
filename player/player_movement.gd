@@ -58,6 +58,11 @@ func physics_update(delta: float) -> void:
 
 	player.move_and_slide()
 
+func set_facing_direction(direction: Vector2) -> void:
+	if direction == Vector2.ZERO:
+		return
+
+	_update_facing_direction(direction)
 
 func _update_facing_direction(direction: Vector2) -> void:
 	if abs(direction.x) > abs(direction.y):

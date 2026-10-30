@@ -17,3 +17,10 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		interaction.try_interact()
+		
+
+func face_direction(direction: Vector2) -> void:
+	if direction == Vector2.ZERO:
+		return
+
+	movement.set_facing_direction(direction)

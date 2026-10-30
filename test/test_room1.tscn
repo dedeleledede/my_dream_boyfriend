@@ -103,7 +103,7 @@ dest_scene = "uid://64vxlrikrmg"
 door_id = 2
 target_door_id = 1
 
-[node name="Marker2D" parent="Travel" index="1" unique_id=949411097]
+[node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
 position = Vector2(-100, 0)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=671331851]
