@@ -103,11 +103,11 @@ position = Vector2(-402, 172)
 scale = Vector2(3, 3)
 
 [node name="PickupKey" parent="." unique_id=1671139198 instance=ExtResource("3_8gxbd")]
-position = Vector2(-479, -104)
+position = Vector2(-472, -1214)
 scale = Vector2(3, 3)
 
 [node name="Enemy" parent="." unique_id=387328203 node_paths=PackedStringArray("player") instance=ExtResource("4_tmjas")]
-position = Vector2(-830, -414)
+position = Vector2(-641, 503)
 collision_layer = 2
 player = NodePath("../Player")
 
@@ -119,7 +119,7 @@ navigation_polygon = SubResource("NavigationPolygon_jso0p")
 tile_set = SubResource("TileSet_kb5vy")
 
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("9_imek5")]
-position = Vector2(-1072, 598)
+position = Vector2(-1038, 133)
 dest_scene = "uid://dycxqtledyan2"
 door_id = 1
 target_door_id = 2
