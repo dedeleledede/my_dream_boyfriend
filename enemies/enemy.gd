@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed: float = 420.0
+@export var speed: float = 320.0
 @export var acceleration: float = 2200.0
 
 @export var player: Player
@@ -21,20 +21,26 @@ func _ready() -> void:
 	max_slides = 8
 	safe_margin = 0.5
 
+	if player == null:
+		player = get_tree().current_scene.get_node_or_null("Player") as Player
+
+	if player == null:
+		push_warning("Enemy: Player não encontrado.")
+		return
+
 	nav_agent.path_desired_distance = 30.0
 	nav_agent.target_desired_distance = 40.0
 	nav_agent.path_max_distance = 100.0
 
-	nav_agent.simplify_path = true
-	nav_agent.simplify_epsilon = 8.0
+	nav_agent.simplify_path = false
 
-	if player != null:
-		last_known_position = _get_player_body_position()
-		has_last_known_position = true
+	last_known_position = _get_player_body_position()
+	has_last_known_position = true
 
-		await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
 
-		nav_agent.target_position = last_known_position
+	nav_agent.target_position = last_known_position
 
 
 func _physics_process(delta: float) -> void:
