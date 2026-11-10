@@ -15,7 +15,14 @@ func _physics_process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if not event.is_action_pressed("interact"):
+		return
+
+	if Game.state == Game.State.GAME_OVER:
+		restart_after_death()
+		return
+
+	if Game.state == Game.State.EXPLORATION:
 		interaction.try_interact()
 		
 
@@ -24,3 +31,28 @@ func face_direction(direction: Vector2) -> void:
 		return
 
 	movement.set_facing_direction(direction)
+
+
+func die() -> void:
+	if Game.state == Game.State.GAME_OVER:
+		return
+
+	velocity = Vector2.ZERO
+
+	Game.set_state(Game.State.GAME_OVER)
+
+	DialogueController.say(
+		"",
+		"Pressione Z para tentar de novo"
+	)
+
+
+func restart_after_death() -> void:
+	Game.set_state(Game.State.EXPLORATION)
+
+	var current_scene := get_tree().current_scene
+
+	if current_scene == null:
+		return
+
+	get_tree().reload_current_scene()

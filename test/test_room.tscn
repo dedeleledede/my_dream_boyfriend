@@ -93,7 +93,7 @@ tile_map_data = PackedByteArray("AAD3//v/AQAGAAMAAAD4//v/AQACAAEAAAD4//z/AQACAAE
 tile_set = SubResource("TileSet_4xmqs")
 
 [node name="HidingSpot" parent="." unique_id=492070324 instance=ExtResource("8_imek5")]
-position = Vector2(-611, -690)
+position = Vector2(-611, -695)
 
 [node name="Player" parent="." unique_id=1530642053 instance=ExtResource("1_qlpi1")]
 position = Vector2(-610, -308)
@@ -119,7 +119,7 @@ navigation_polygon = SubResource("NavigationPolygon_jso0p")
 tile_set = SubResource("TileSet_kb5vy")
 
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("9_imek5")]
-position = Vector2(-1054, 126)
+position = Vector2(-1072, 598)
 dest_scene = "uid://dycxqtledyan2"
 door_id = 1
 target_door_id = 2
@@ -138,7 +138,10 @@ target_door_id = 4
 [node name="CollisionShape2D" parent="Door/StaticBody2D" parent_id_path=PackedInt32Array(89830354, 590905828) index="0" unique_id=559985602]
 position = Vector2(-0.5, 21)
 
-[node name="CollisionShape2D" parent="Door/Travel" parent_id_path=PackedInt32Array(89830354, 1917196863) index="0" unique_id=434407247]
+[node name="Travel" parent="Door" index="4" unique_id=1917196863]
+position = Vector2(1.5, -19)
+
+[node name="CollisionShape2D" parent="Door/Travel" index="0" unique_id=434407247]
 position = Vector2(0.24999999, 50.5)
 
 [editable path="Travel"]

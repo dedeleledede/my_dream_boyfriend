@@ -110,7 +110,10 @@ door_id = 4
 target_door_id = 3
 enter_direction = 1
 
-[node name="SpawnPoint" parent="Door/Travel" parent_id_path=PackedInt32Array(89830354, 1917196863) index="1" unique_id=949411097]
+[node name="Travel" parent="Door" index="4" unique_id=1917196863]
+position = Vector2(-2, -35.25)
+
+[node name="SpawnPoint" parent="Door/Travel" index="1" unique_id=949411097]
 position = Vector2(-0.5, -42.5)
 
 [editable path="Door"]

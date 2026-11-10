@@ -11,6 +11,9 @@ size = Vector2(72, 56)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnrag"]
 size = Vector2(60, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ik78"]
+size = Vector2(49.5, 21.75)
+
 [node name="Door" type="Area2D" unique_id=89830354]
 collision_layer = 4
 collision_mask = 0
@@ -41,12 +44,10 @@ offset_bottom = -22.0
 text = "Z"
 
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("3_6ik78")]
-position = Vector2(0, -26)
+position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" parent="Travel" index="0" unique_id=434407247]
-scale = Vector2(0.9953175, 0.0800007)
-
-[node name="Marker2D" parent="Travel" index="1" unique_id=949411097]
-position = Vector2(0, 70)
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_6ik78")
 
 [editable path="Travel"]
