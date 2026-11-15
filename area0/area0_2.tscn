@@ -1,0 +1,122 @@
+[gd_scene format=4 uid="uid://dgbou7ahbj2rm"]
+
+[ext_resource type="Texture2D" uid="uid://bqe5qy62ydfvk" path="res://area0/area0_tileset.png" id="1_pecb1"]
+[ext_resource type="Texture2D" uid="uid://b8y13a6p6ggkb" path="res://area0/area0_furniture.png" id="2_w5tow"]
+[ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="3_m4x2o"]
+[ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="4_w5tow"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8jqk"]
+resource_name = "tile0"
+texture = ExtResource("1_pecb1")
+texture_region_size = Vector2i(128, 128)
+1:5/0 = 0
+1:6/0 = 0
+0:6/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+3:5/0 = 0
+3:7/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+5:5/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ssana"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_v8jqk")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mblwy"]
+resource_name = "furniture0"
+texture = ExtResource("2_w5tow")
+texture_region_size = Vector2i(128, 128)
+3:9/0 = 0
+2:9/0 = 0
+3:5/size_in_atlas = Vector2i(1, 3)
+3:5/0 = 0
+0:5/size_in_atlas = Vector2i(3, 2)
+0:5/0 = 0
+0:3/size_in_atlas = Vector2i(3, 2)
+0:3/0 = 0
+3:3/size_in_atlas = Vector2i(1, 2)
+3:3/0 = 0
+4:12/0 = 0
+4:13/0 = 0
+6:10/size_in_atlas = Vector2i(3, 4)
+6:10/0 = 0
+9:9/size_in_atlas = Vector2i(2, 1)
+9:9/0 = 0
+9:10/size_in_atlas = Vector2i(2, 2)
+9:10/0 = 0
+11:9/size_in_atlas = Vector2i(2, 3)
+11:9/0 = 0
+13:4/size_in_atlas = Vector2i(2, 2)
+13:4/0 = 0
+6:2/size_in_atlas = Vector2i(6, 6)
+6:2/0 = 0
+6:8/size_in_atlas = Vector2i(3, 2)
+6:8/0 = 0
+0:8/size_in_atlas = Vector2i(3, 1)
+0:8/0 = 0
+0:7/size_in_atlas = Vector2i(3, 1)
+0:7/0 = 0
+1:11/0 = 0
+1:10/0 = 0
+2:11/0 = 0
+2:10/0 = 0
+4:11/0 = 0
+4:10/0 = 0
+0:11/0 = 0
+0:10/0 = 0
+0:9/0 = 0
+5:15/size_in_atlas = Vector2i(5, 1)
+5:15/0 = 0
+3:10/0 = 0
+3:11/0 = 0
+1:9/0 = 0
+0:12/size_in_atlas = Vector2i(3, 4)
+0:12/0 = 0
+3:14/size_in_atlas = Vector2i(1, 2)
+3:14/0 = 0
+3:12/0 = 0
+3:13/0 = 0
+13:6/0 = 0
+13:7/0 = 0
+13:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_exo1k"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_mblwy")
+
+[node name="Area02" type="Node2D" unique_id=1611793265]
+
+[node name="Tileset" type="TileMapLayer" parent="." unique_id=1322282536]
+tile_map_data = PackedByteArray("AAD+/wMAAAABAAQAAAD+/wQAAAABAAQAAAD+/wUAAAAAAAYAAAD//wMAAAACAAUAAAD//wQAAAACAAUAAAD//wUAAAABAAYAAAAAAAMAAAACAAUAAAAAAAQAAAACAAUAAAAAAAUAAAABAAYAAAABAAMAAAACAAUAAAABAAQAAAACAAUAAAABAAUAAAABAAYAAAACAAMAAAACAAUAAAACAAQAAAACAAUAAAACAAUAAAABAAYAAAADAAMAAAACAAUAAAADAAQAAAACAAUAAAADAAUAAAABAAYAAAD+//z/AAAEAAQAAAD+//3/AAABAAQAAAD+//7/AAABAAQAAAD+////AAABAAQAAAD+/wAAAAABAAQAAAD+/wEAAAABAAQAAAD+/wIAAAABAAQAAAD///z/AAAFAAQAAAD///3/AAAFAAUAAAD///7/AAAFAAYAAAD/////AAACAAUAAAD//wAAAAACAAUAAAD//wEAAAACAAUAAAD//wIAAAACAAUAAAAAAPz/AAAFAAQAAAAAAP3/AAAFAAUAAAAAAP7/AAAFAAYAAAAAAP//AAACAAUAAAAAAAAAAAACAAUAAAAAAAEAAAACAAUAAAAAAAIAAAACAAUAAAABAPz/AAAFAAQAAAABAP3/AAAFAAUAAAABAP7/AAAFAAYAAAABAP//AAACAAUAAAABAAAAAAACAAUAAAABAAEAAAACAAUAAAABAAIAAAACAAUAAAACAPz/AAAFAAQAAAACAP3/AAAFAAUAAAACAP7/AAAFAAYAAAACAP//AAACAAUAAAACAAAAAAACAAUAAAADAPz/AAAFAAQAAAADAP3/AAAFAAUAAAADAP7/AAAFAAYAAAADAP//AAACAAUAAAADAAAAAAACAAUAAAADAAEAAAACAAUAAAADAAIAAAACAAUAAAAEAPz/AAAFAAQAAAAEAP3/AAAFAAUAAAAEAP7/AAAFAAYAAAAEAP//AAACAAUAAAAEAAAAAAACAAUAAAAEAAEAAAACAAUAAAAEAAIAAAACAAUAAAAEAAMAAAACAAUAAAAEAAQAAAACAAUAAAAEAAUAAAABAAYAAAAFAPz/AAAGAAQAAAAFAP3/AAADAAYAAAAFAP7/AAADAAYAAAAFAP//AAADAAYAAAAFAAAAAAADAAYAAAAFAAEAAAADAAYAAAAFAAIAAAAHAAYAAAAFAAMAAAAHAAcAAAAFAAQAAAADAAYAAAAFAAUAAAADAAcAAAACAAIAAAACAAUAAAACAAEAAAACAAUAAAA=")
+tile_set = SubResource("TileSet_ssana")
+
+[node name="Furniture" type="TileMapLayer" parent="." unique_id=501946116]
+tile_map_data = PackedByteArray("AAAWAPv/AAADAA0AAAAAAP3/AAAGAAgAAAAAAAAAAAAGAAoAAAACAP//AAAJAAoAAAAEAP7/AAALAAkAAAA=")
+tile_set = SubResource("TileSet_exo1k")
+
+[node name="Player" parent="." unique_id=1530642053 instance=ExtResource("3_m4x2o")]
+position = Vector2(353, 90)
+
+[node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("4_w5tow")]
+position = Vector2(656, 385)
+dest_scene = "uid://cualhk1gcv4ol"
+door_id = 2
+target_door_id = 1
+enter_direction = 3
+
+[node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
+position = Vector2(-100, 0)
+
+[editable path="Travel"]
