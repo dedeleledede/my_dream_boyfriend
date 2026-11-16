@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8y13a6p6ggkb"
-path="res://.godot/imported/area0_furniture.png-6aee070cc280ca6a796790c9fcba5039.ctex"
+uid="uid://d0q8puerdcb5k"
+path="res://.godot/imported/boyfriendsprite.png-748b912d0ab34f3e8d816bdfe473e837.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://area0/area0_furniture.png"
-dest_files=["res://.godot/imported/area0_furniture.png-6aee070cc280ca6a796790c9fcba5039.ctex"]
+source_file="res://NPC/boyfriendsprite.png"
+dest_files=["res://.godot/imported/boyfriendsprite.png-748b912d0ab34f3e8d816bdfe473e837.ctex"]
 
 [params]
 

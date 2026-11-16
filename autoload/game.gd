@@ -1,5 +1,25 @@
 extends Node
 
+@onready var pause_menu_scene: PackedScene = preload("res://game_ui/ui_menus/pause_menu.tscn")
+var pause_menu: Node = null
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		if pause_menu == null:
+			open_pause()
+		else:
+			close_pause()
+
+func open_pause() -> void:
+	pause_menu = pause_menu_scene.instantiate()
+	add_child(pause_menu)
+	get_tree().paused = true
+
+func close_pause() -> void:
+	pause_menu.queue_free()
+	pause_menu = null
+	get_tree().paused = false
+
 signal state_changed(old_state: State, new_state: State)
 signal world_changed(world: World)
 

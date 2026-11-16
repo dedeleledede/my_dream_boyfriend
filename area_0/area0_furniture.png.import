@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://slknygaddfon"
-path="res://.godot/imported/player_back.png-55c85d9915e5eab67d9ff5cc77723f78.ctex"
+uid="uid://b8y13a6p6ggkb"
+path="res://.godot/imported/area0_furniture.png-1168f47e453635b8b9ffda6be09d5dbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://temp_resources/player_back.png"
-dest_files=["res://.godot/imported/player_back.png-55c85d9915e5eab67d9ff5cc77723f78.ctex"]
+source_file="res://area_0/area0_furniture.png"
+dest_files=["res://.godot/imported/area0_furniture.png-1168f47e453635b8b9ffda6be09d5dbc.ctex"]
 
 [params]
 

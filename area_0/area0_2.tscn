@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dgbou7ahbj2rm"]
 
-[ext_resource type="Texture2D" uid="uid://bqe5qy62ydfvk" path="res://area0/area0_tileset.png" id="1_pecb1"]
-[ext_resource type="Texture2D" uid="uid://b8y13a6p6ggkb" path="res://area0/area0_furniture.png" id="2_w5tow"]
+[ext_resource type="Texture2D" uid="uid://bqe5qy62ydfvk" path="res://area_0/area0_tileset.png" id="1_pecb1"]
+[ext_resource type="Texture2D" uid="uid://b8y13a6p6ggkb" path="res://area_0/area0_furniture.png" id="2_w5tow"]
 [ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="3_m4x2o"]
 [ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="4_w5tow"]
 
@@ -70,7 +70,7 @@ texture_region_size = Vector2i(128, 128)
 8:11/0 = 0
 8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 0, -64, 0)
 7:11/0 = 0
-7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 0, 32, 0, 32, 64, -64, 64)
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 0, 64, 0, 32, 30, 32, 64, -64, 64)
 7:12/0 = 0
 7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 32, -64, 32, 64, -64, 64)
 7:10/0 = 0
@@ -80,13 +80,12 @@ texture_region_size = Vector2i(128, 128)
 5:11/0 = 0
 6:11/0 = 0
 5:12/0 = 0
+5:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 6:12/0 = 0
+6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 5:13/0 = 0
-5:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 0, 32, 32, -64, 32)
 6:13/0 = 0
-6:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 0, -64, 0)
 7:13/0 = 0
-7:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 32, -64, 32, 32, -32, 32, -64, 0)
 11:10/0 = 0
 11:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 10:9/0 = 0

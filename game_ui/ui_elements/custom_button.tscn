@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ct1s6mxpiakml"]
+
+[ext_resource type="Script" uid="uid://bo3wayaf5rlmb" path="res://game_ui/ui_elements/custom_button.gd" id="1_w3gho"]
+[ext_resource type="Texture2D" uid="uid://b4ded7g5pif38" path="res://ui_elem/button_idle.png" id="2_xlqct"]
+[ext_resource type="Texture2D" uid="uid://cppswjsikpcld" path="res://ui_elem/button_selected.png" id="3_1kvsy"]
+[ext_resource type="FontFile" uid="uid://cj5nl5ejy0b2d" path="res://game_ui/font/PixelifySans-Regular.ttf" id="5_1kvsy"]
+
+[node name="CustomButton" type="Control" unique_id=668693985]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -43.0
+offset_right = 153.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=949703461]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_xlqct")
+texture_hover = ExtResource("3_1kvsy")
+texture_focused = ExtResource("3_1kvsy")
+script = ExtResource("1_w3gho")
+texture_selected = ExtResource("3_1kvsy")
+texture_idle = ExtResource("2_xlqct")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=334421839]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008103727
+anchor_top = 0.01754386
+anchor_right = 0.9967585
+anchor_bottom = 0.9707602
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("5_1kvsy")
+theme_override_font_sizes/font_size = 60
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1

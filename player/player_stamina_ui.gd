@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var stamina_bar: ProgressBar = $StaminaBar
+@onready var stamina_bar: TextureProgressBar = $StaminaBar
 @onready var stamina: PlayerStamina = $"../Stamina"
 
 

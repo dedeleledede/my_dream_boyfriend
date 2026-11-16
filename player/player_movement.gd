@@ -6,15 +6,11 @@ extends Node
 @export var acceleration: float = 6000.0
 @export var deceleration: float = 5000.0
 
-@export_group("Sprites")
-@export var sprite_front: Texture2D
-@export var sprite_back: Texture2D
-@export var sprite_side: Texture2D
-
 @onready var player: Player = get_parent()
-@onready var sprite: Sprite2D = $"../Sprite2D"
+@onready var sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
+#@onready var sprite: Sprite2D = $"../Sprite2D"
 @onready var stamina: PlayerStamina = $"../Stamina"
-
+var last_dir = "down"
 
 func physics_update(delta: float) -> void:
 	var input_direction := Input.get_vector(
@@ -51,8 +47,7 @@ func physics_update(delta: float) -> void:
 		change_speed * delta
 	)
 
-	if input_direction != Vector2.ZERO:
-		_update_facing_direction(input_direction)
+	_update_facing_direction(input_direction)
 
 	stamina.update_stamina(delta, is_running)
 
@@ -64,26 +59,36 @@ func set_facing_direction(direction: Vector2) -> void:
 
 	_update_facing_direction(direction)
 
-func _update_facing_direction(direction: Vector2) -> void:
-	if abs(direction.x) > abs(direction.y):
+func _update_facing_direction(_direction: Vector2) -> void:
+	
+	if player.velocity.length() > 5:
+		if abs(player.velocity.x) > abs(player.velocity.y):
+			if player.velocity.x > 0.0:
+				player.facing_direction = Vector2.RIGHT
+				#sprite.texture = sprite_side
+				sprite.play("walk_right")
+				last_dir = "right"
+				#sprite.flip_h = false
 
-		if direction.x > 0.0:
-			player.facing_direction = Vector2.RIGHT
-			sprite.texture = sprite_side
-			sprite.flip_h = false
+			else:
+				player.facing_direction = Vector2.LEFT
+				#sprite.texture = sprite_side
+				sprite.play("walk_left")
+				last_dir = "left"
+				#sprite.flip_h = true
 
 		else:
-			player.facing_direction = Vector2.LEFT
-			sprite.texture = sprite_side
-			sprite.flip_h = true
+			#sprite.flip_h = false
 
+			if player.velocity.y > 0.0:
+				player.facing_direction = Vector2.DOWN
+				sprite.play("walk_down")
+				last_dir = "down"
+
+			else:
+				player.facing_direction = Vector2.UP
+				sprite.play("walk_up")
+				last_dir = "up"
 	else:
-		sprite.flip_h = false
-
-		if direction.y > 0.0:
-			player.facing_direction = Vector2.DOWN
-			sprite.texture = sprite_front
-
-		else:
-			player.facing_direction = Vector2.UP
-			sprite.texture = sprite_back
+		sprite.play("idle_"+last_dir)
+		

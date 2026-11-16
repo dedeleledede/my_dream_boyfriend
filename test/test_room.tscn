@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://x3ag538kcjmq" path="res://temp_resources/area0placeholder.png" id="1_kb5vy"]
 [ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="1_qlpi1"]
 [ext_resource type="PackedScene" uid="uid://cop4qkxcbxqrp" path="res://interaction/pickup_key.tscn" id="3_8gxbd"]
-[ext_resource type="PackedScene" uid="uid://djoo4vhfos1uc" path="res://enemies/enemy.tscn" id="4_tmjas"]
+[ext_resource type="PackedScene" uid="uid://djoo4vhfos1uc" path="res://NPC/enemies/enemy.tscn" id="4_tmjas"]
 [ext_resource type="Texture2D" uid="uid://c7pndpf3csiqi" path="res://temp_resources/table.png" id="6_or532"]
 [ext_resource type="Texture2D" uid="uid://c0t0yxscu6eil" path="res://temp_resources/closet.png" id="6_yokvk"]
 [ext_resource type="PackedScene" uid="uid://cbo6hd6vnnklu" path="res://interaction/hiding_spot.tscn" id="8_imek5"]

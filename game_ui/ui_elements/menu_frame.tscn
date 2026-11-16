@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cv32xrn74w5a7"]
+
+[ext_resource type="Texture2D" uid="uid://do8bl8gr6c8gh" path="res://ui_elem/frame.png" id="1_codmr"]
+[ext_resource type="Texture2D" uid="uid://bjg4eh10w4kua" path="res://ui_elem/header.png" id="2_0h66w"]
+[ext_resource type="Texture2D" uid="uid://cox44wo2xqd4q" path="res://ui_elem/header_deco.png" id="3_p443c"]
+[ext_resource type="FontFile" uid="uid://rql3usnjwjvy" path="res://game_ui/font/PixelifySans-Bold.ttf" id="4_lgyj8"]
+[ext_resource type="Texture2D" uid="uid://btnftu6rs5lof" path="res://ui_elem/frame_decor.png" id="5_ade1b"]
+
+[node name="MenuFrame" type="TextureRect" unique_id=2005478173]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_codmr")
+
+[node name="Header" type="TextureRect" parent="." unique_id=96366412]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -974.0
+offset_top = 52.0
+offset_right = 974.0
+offset_bottom = 218.0
+grow_horizontal = 2
+texture = ExtResource("2_0h66w")
+
+[node name="HeaderDeco" type="TextureRect" parent="Header" unique_id=903287519]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -454.0
+offset_top = 20.0
+offset_right = -11.0
+offset_bottom = 145.0
+grow_horizontal = 0
+texture = ExtResource("3_p443c")
+
+[node name="MenuTitle" type="RichTextLabel" parent="Header" unique_id=1679761798]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.277
+anchor_right = 0.337
+anchor_bottom = 0.675
+offset_left = -0.6480026
+offset_top = 0.017997742
+offset_right = -0.47601318
+offset_bottom = -0.05000305
+theme_override_colors/default_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/normal_font = ExtResource("4_lgyj8")
+theme_override_font_sizes/normal_font_size = 54
+text = "PLACEHOLDER"
+scroll_active = false
+
+[node name="FrameDeco" type="TextureRect" parent="." unique_id=10047371]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_ade1b")
+
+[node name="Content" type="Control" parent="." unique_id=390314172]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dl4ftcxqxinig"]
 
 [ext_resource type="Script" uid="uid://db5dpm33ohmqv" path="res://player/player.gd" id="1_yw30f"]
-[ext_resource type="Texture2D" uid="uid://dx23cryneo3vi" path="res://temp_resources/player_side.png" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://cqch4f08tlkwk" path="res://player/player_movement.gd" id="3_qjkh3"]
-[ext_resource type="Texture2D" uid="uid://bk7tx6na8k8jw" path="res://temp_resources/player_front.png" id="4_boad6"]
 [ext_resource type="Script" uid="uid://dno12tvvcs3sl" path="res://player/player_interaction.gd" id="4_g6k8r"]
-[ext_resource type="Texture2D" uid="uid://slknygaddfon" path="res://temp_resources/player_back.png" id="5_rgyib"]
+[ext_resource type="Texture2D" uid="uid://b6jdwbxww0ny8" path="res://ui_elem/stamina_gauge_background.png" id="6_hg6s5"]
 [ext_resource type="Script" uid="uid://dgyb166qjxoe5" path="res://player/player_stamina.gd" id="7_boad6"]
+[ext_resource type="Texture2D" uid="uid://cbpidymiicunq" path="res://ui_elem/stamina_fill.png" id="8_8t03j"]
 [ext_resource type="Script" uid="uid://nu7fo8kpfvbs" path="res://player/player_stamina_ui.gd" id="8_rgyib"]
+[ext_resource type="Texture2D" uid="uid://djc6x5pl0a1gd" path="res://ui_elem/stamina_gauge.png" id="9_8t03j"]
+[ext_resource type="Texture2D" uid="uid://j3hmlsmsclxx" path="res://player/playersprite.png" id="9_hg6s5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrag"]
 radius = 48.0
@@ -16,12 +17,192 @@ height = 102.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iivr6"]
 size = Vector2(161, 162)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw77l"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rptt4"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebec5"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yllr7"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb6p2"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wodsf"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32hag"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(128, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqiix"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(256, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7oew"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(384, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c35mf"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65viv"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(128, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7c3f"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(256, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjvpn"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(384, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7qer"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(0, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4c7l"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(128, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knn7v"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(256, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pqkx"]
+atlas = ExtResource("9_hg6s5")
+region = Rect2(384, 256, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ml1ua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t03j")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg6s5")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw77l")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rptt4")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ieo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebec5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yllr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb6p2")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wodsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32hag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqiix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7oew")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c35mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65viv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7c3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjvpn")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7qer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4c7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knn7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pqkx")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1530642053]
 collision_layer = 2
 script = ExtResource("1_yw30f")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1853138295]
-texture = ExtResource("2_yw30f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235075423]
 position = Vector2(0, 61)
@@ -36,13 +217,10 @@ position = Vector2(0, 63)
 shape = SubResource("RectangleShape2D_iivr6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180946210]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 
 [node name="Movement" type="Node" parent="." unique_id=1720584079]
 script = ExtResource("3_qjkh3")
-sprite_front = ExtResource("4_boad6")
-sprite_back = ExtResource("5_rgyib")
-sprite_side = ExtResource("2_yw30f")
 
 [node name="Interaction" type="Node" parent="." unique_id=1221370439]
 script = ExtResource("4_g6k8r")
@@ -51,11 +229,27 @@ script = ExtResource("4_g6k8r")
 script = ExtResource("7_boad6")
 
 [node name="StaminaUI" type="CanvasLayer" parent="." unique_id=527224037]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 script = ExtResource("8_rgyib")
 
-[node name="StaminaBar" type="ProgressBar" parent="StaminaUI" unique_id=1521110950]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 47.0
+[node name="StaminaBar" type="TextureProgressBar" parent="StaminaUI" unique_id=166419886]
+anchors_preset = -1
+anchor_left = 0.0390625
+anchor_top = 1.4746094
+anchor_right = 0.10253906
+anchor_bottom = 1.9658203
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
 value = 100.0
+fill_mode = 3
+texture_under = ExtResource("6_hg6s5")
+texture_over = ExtResource("9_8t03j")
+texture_progress = ExtResource("8_8t03j")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1389825203]
+sprite_frames = SubResource("SpriteFrames_ml1ua")
+animation = &"idle_left"
+frame_progress = 0.26486665

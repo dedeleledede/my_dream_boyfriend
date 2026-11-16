@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk7tx6na8k8jw"
-path="res://.godot/imported/player_front.png-930bb5cb17c761156035489b3e6c5728.ctex"
+uid="uid://bpc08l0xqbnm5"
+path="res://.godot/imported/bfenemysprite.png-d92457f7053908e9278bd93dbfd34873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://temp_resources/player_front.png"
-dest_files=["res://.godot/imported/player_front.png-930bb5cb17c761156035489b3e6c5728.ctex"]
+source_file="res://NPC/enemies/bfenemysprite.png"
+dest_files=["res://.godot/imported/bfenemysprite.png-d92457f7053908e9278bd93dbfd34873.ctex"]
 
 [params]
 
