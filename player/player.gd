@@ -41,11 +41,6 @@ func die() -> void:
 
 	Game.set_state(Game.State.GAME_OVER)
 
-	DialogueController.say(
-		"",
-		"Pressione Z para tentar de novo"
-	)
-
 
 func restart_after_death() -> void:
 	Game.set_state(Game.State.EXPLORATION)

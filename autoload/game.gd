@@ -3,6 +3,21 @@ extends Node
 @onready var pause_menu_scene: PackedScene = preload("res://game_ui/ui_menus/pause_menu.tscn")
 var pause_menu: Node = null
 
+var flags := {
+	"home_event1_1": false,
+	"home_event1_2": false,
+	"home_event2": false,
+	"home_event3": false,
+	"ending_event_dream": false,
+	"ending_event_nightmare": false,
+	"ending_event_lucid":false}
+
+#flags:
+	#world:
+	#endings: dream, nightmare, lucid
+
+
+		
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if pause_menu == null:

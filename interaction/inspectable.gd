@@ -5,8 +5,8 @@ extends Interactable
 @export_multiline var text: String = "test"
 
 
-func interact(_player: Node) -> void:
-	DialogueController.say(
-		speaker_name,
-		text
-	)
+#func interact(_player: Node) -> void:
+	#DialogueController.say(
+		#speaker_name,
+		#text
+	#)

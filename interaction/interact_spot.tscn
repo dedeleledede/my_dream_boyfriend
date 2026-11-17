@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://decpi314ufy2y"]
+
+[ext_resource type="Script" uid="uid://ocg033420d4a" path="res://interaction/interact_spot.gd" id="1_h01ls"]
+[ext_resource type="Texture2D" uid="uid://bcdrw31lhnc8d" path="res://ui_elem/pointer.png" id="2_x5sin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jso0p"]
+radius = 41.01219
+
+[sub_resource type="Animation" id="Animation_vgp2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-43, -177)]
+}
+
+[sub_resource type="Animation" id="Animation_t84tr"]
+resource_name = "bounce_interact_bubble"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1.035264, 9.513644),
+"update": 0,
+"values": [Vector2(-43, -177), Vector2(-43, -170)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyjtm"]
+_data = {
+&"RESET": SubResource("Animation_vgp2l"),
+&"bounce_interact_bubble": SubResource("Animation_t84tr")
+}
+
+[node name="InteractSpot" type="Area2D" unique_id=1871968309]
+script = ExtResource("1_h01ls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1801581055]
+shape = SubResource("CircleShape2D_jso0p")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=478956296]
+offset_left = -43.0
+offset_top = -177.0
+offset_right = 117.0
+offset_bottom = -21.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_x5sin")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1490584026]
+libraries/ = SubResource("AnimationLibrary_nyjtm")
+autoplay = &"bounce_interact_bubble"

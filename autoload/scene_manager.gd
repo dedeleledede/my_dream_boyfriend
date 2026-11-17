@@ -1,10 +1,11 @@
 extends Node
 
+var transition_screen:Transition
+var _transition_manager_scene:PackedScene = preload("res://game_ui/transition_manager.tscn")
 
 var previous_door_id: int = -1
 var target_door_id: int = -1
 
-var is_transitioning: bool = false
 var unlocked_doors: Dictionary = {}
 
 var previous_facing_direction: Vector2 = Vector2.DOWN
@@ -15,29 +16,31 @@ func travel_to(
 	to_door_id: int,
 	facing_direction: Vector2
 ) -> void:
-	if is_transitioning:
-		return
 
 	if scene_path.is_empty():
 		push_warning("SceneManager: cena destino vazia")
 		return
 
-	is_transitioning = true
 
 	previous_door_id = from_door_id
 	target_door_id = to_door_id
 	previous_facing_direction = facing_direction
 
-	print(
-		"TRAVEL: ",
-		from_door_id,
-		" -> ",
-		to_door_id,
-		" | ",
-		scene_path
-	)
-
+	#print(
+		#"TRAVEL: ",
+		#from_door_id,
+		#" -> ",
+		#to_door_id,
+		#" | ",
+		#scene_path
+	#)
+	
+	transition_screen = _transition_manager_scene.instantiate() as Transition
+	get_tree().root.add_child(transition_screen)
+	transition_screen.start_transition()
+	await transition_screen.transition_in_complete
 	call_deferred("_change_scene_deferred", scene_path)
+	transition_screen.finish_transition()
 
 
 func _change_scene_deferred(scene_path: String) -> void:
@@ -45,8 +48,6 @@ func _change_scene_deferred(scene_path: String) -> void:
 
 	if error != OK:
 		push_error("SceneManager: erro ao carregar cena %s" % scene_path)
-
-		is_transitioning = false
 
 
 func should_spawn_at(door_id: int) -> bool:
@@ -60,10 +61,6 @@ func consume_arrival(door_id: int) -> bool:
 	target_door_id = -1
 
 	return true
-
-
-func finish_transition() -> void:
-	is_transitioning = false
 
 
 func unlock_door(door_id: String) -> void:

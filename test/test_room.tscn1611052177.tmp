@@ -1,0 +1,144 @@
+[gd_scene format=4 uid="uid://64vxlrikrmg"]
+
+[ext_resource type="Texture2D" uid="uid://x3ag538kcjmq" path="res://temp_resources/area0placeholder.png" id="1_kb5vy"]
+[ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="1_qlpi1"]
+[ext_resource type="PackedScene" uid="uid://cop4qkxcbxqrp" path="res://interaction/pickup_key.tscn" id="3_8gxbd"]
+[ext_resource type="PackedScene" uid="uid://djoo4vhfos1uc" path="res://NPC/enemies/enemy.tscn" id="4_tmjas"]
+[ext_resource type="Texture2D" uid="uid://c7pndpf3csiqi" path="res://temp_resources/table.png" id="6_or532"]
+[ext_resource type="Texture2D" uid="uid://c0t0yxscu6eil" path="res://temp_resources/closet.png" id="6_yokvk"]
+[ext_resource type="PackedScene" uid="uid://cbo6hd6vnnklu" path="res://interaction/hiding_spot.tscn" id="8_imek5"]
+[ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="9_imek5"]
+[ext_resource type="PackedScene" uid="uid://wphwxt3jwdal" path="res://interaction/door.tscn" id="10_1ekks"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or532"]
+texture = ExtResource("1_kb5vy")
+texture_region_size = Vector2i(128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -34, 28, -35, 27, 64, -64, 64)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, -34, -28, -35, -27, 64, 64, 64)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, 64, 64, 34, 28, 35, 27, -64, -64, -64)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, 64, -64, 64, -64, 34, -28, 35, -27, -64, 64, -64)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4xmqs"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_or532")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jso0p"]
+vertices = PackedVector2Array(-1009.3594, -1694, -1065.1719, -1694, -1065.1484, -1696.5781, -460, -546, -460, -699, -286, -1250, -286, 610, -994, -1091.1563, -994, -1250, -755, -699, -994, 610, -994, 579.15625, -755, -546, -1030.9922, 512, -1030.2969, 443.82813, -994, 444.84375, -1030.2969, 580.15625, -1030.9922, 128, -1030.2969, 59.828125, -994, 60.84375, -994, 195.15625, -1030.2969, 196.15625, -994, -323.15625, -994, -188.84375, -1030.2969, -187.82813, -1030.9922, -256, -1030.2969, -324.15625, -994, -572.84375, -1030.2969, -571.8281, -1030.9922, -640, -994, -956.84375, -1030.2969, -955.8281, -1030.9922, -1024, -1030.2969, -708.15625, -994, -707.15625, -1030.2969, -1092.1563)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 5, 4, 9), PackedInt32Array(3, 6, 10, 11, 12), PackedInt32Array(13, 14, 15, 11, 16), PackedInt32Array(17, 18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(27, 28, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(29, 33, 34, 9, 12, 27), PackedInt32Array(32, 35, 7, 9, 30), PackedInt32Array(34, 30, 9), PackedInt32Array(22, 27, 12), PackedInt32Array(12, 11, 15), PackedInt32Array(12, 15, 20), PackedInt32Array(12, 20, 19), PackedInt32Array(12, 19, 23), PackedInt32Array(22, 12, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1095, -1728, -1107, 682, -221, 699, -188, -1686)])
+parsed_geometry_type = 1
+parsed_collision_mask = 4294967041
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 30.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ekks"]
+texture = ExtResource("6_yokvk")
+texture_region_size = Vector2i(128, 128)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hj67q"]
+texture = ExtResource("6_or532")
+texture_region_size = Vector2i(128, 128)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_kb5vy"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_hj67q")
+sources/0 = SubResource("TileSetAtlasSource_1ekks")
+
+[node name="TestRoom" type="Node2D" unique_id=67773715]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1733249371 groups=["navigation"]]
+tile_map_data = PackedByteArray("AAD3//v/AQAGAAMAAAD4//v/AQACAAEAAAD4//z/AQACAAEAAAD5//3/AQACAAEAAAD5//7/AQACAAEAAAD6//7/AQACAAEAAAD6////AQACAAEAAAD7////AQACAAEAAAD7/wAAAQACAAEAAAD8/wAAAQACAAEAAAD8/wEAAQACAAEAAAD9/wEAAQACAAEAAAD+/wIAAQADAAIAAAD3//z/AQABAAAAAAD3//3/AQAGAAIAAAD3//7/AQAGAAMAAAD3////AQABAAAAAAD3/wAAAQAGAAIAAAD3/wEAAQAGAAMAAAD3/wIAAQABAAAAAAD3/wMAAQAGAAIAAAD3/wQAAQAGAAMAAAD4//3/AQACAAEAAAD4//7/AQACAAEAAAD4////AQACAAEAAAD4/wAAAQACAAEAAAD4/wEAAQACAAEAAAD4/wIAAQACAAEAAAD4/wMAAQACAAEAAAD4/wQAAQACAAEAAAD5//v/AQACAAEAAAD5//z/AQACAAEAAAD5////AQACAAEAAAD5/wAAAQACAAEAAAD5/wEAAQACAAEAAAD5/wIAAQACAAEAAAD5/wMAAQACAAEAAAD5/wQAAQACAAEAAAD6//v/AQACAAEAAAD6//z/AQACAAEAAAD6//3/AQACAAEAAAD6/wAAAQACAAEAAAD6/wEAAQACAAEAAAD6/wIAAQACAAEAAAD6/wMAAQACAAEAAAD6/wQAAQACAAEAAAD7//v/AQACAAEAAAD7//z/AQACAAEAAAD7//3/AQACAAEAAAD7//7/AQACAAEAAAD7/wEAAQACAAEAAAD7/wIAAQACAAEAAAD7/wMAAQACAAEAAAD7/wQAAQACAAEAAAD8//v/AQACAAEAAAD8//z/AQACAAEAAAD8//3/AQACAAEAAAD8//7/AQACAAEAAAD8////AQACAAEAAAD8/wIAAQACAAEAAAD8/wMAAQACAAEAAAD8/wQAAQACAAEAAAD9//v/AQACAAEAAAD9//z/AQACAAEAAAD9//3/AQACAAEAAAD9//7/AQACAAEAAAD9////AQACAAEAAAD9/wAAAQACAAEAAAD9/wIAAQACAAEAAAD9/wMAAQACAAEAAAD9/wQAAQACAAEAAAD+//v/AQADAAIAAAD+//z/AQADAAIAAAD+//3/AQADAAIAAAD+//7/AQADAAIAAAD+////AQADAAIAAAD+/wAAAQADAAIAAAD+/wEAAQADAAIAAAD+/wMAAQADAAIAAAD+/wQAAQADAAIAAAD3//n/AQABAAAAAAD3//r/AQAGAAIAAAD4//n/AQACAAEAAAD4//r/AQACAAEAAAD5//n/AQACAAEAAAD5//r/AQACAAEAAAD6//n/AQACAAEAAAD6//r/AQACAAEAAAD7//n/AQACAAEAAAD7//r/AQACAAEAAAD8//n/AQACAAEAAAD8//r/AQACAAEAAAD9//n/AQACAAEAAAD9//r/AQACAAEAAAD+//n/AQADAAIAAAD+//r/AQADAAIAAAD4/wUAAQABAAIAAAD5/wUAAQABAAIAAAD6/wUAAQABAAIAAAD7/wUAAQABAAIAAAD8/wUAAQABAAIAAAD9/wUAAQABAAIAAAD3/wUAAQAAAAIAAAD4//j/AQACAAEAAAD5//j/AQACAAEAAAD6//j/AQACAAEAAAD7//j/AQACAAEAAAD4//f/AQACAAEAAAD5//f/AQACAAEAAAD6//f/AQACAAEAAAD7//f/AQACAAEAAAD8//f/AQACAAEAAAD9//f/AQACAAEAAAD+//f/AQADAAIAAAD3//j/AQAGAAMAAAD3//f/AQAGAAIAAAD4//b/AQACAAEAAAD3//b/AQABAAAAAAD5//b/AQACAAEAAAD6//b/AQACAAEAAAD7//b/AQACAAEAAAD8//b/AQACAAEAAAD8//j/AQACAAEAAAD9//b/AQACAAEAAAD9//j/AQACAAEAAAD+//b/AQADAAIAAAD+//j/AQADAAIAAAD4//X/AQAFAAIAAAD5//X/AQAFAAIAAAD6//X/AQAFAAIAAAD7//X/AQAFAAIAAAD8//X/AQAFAAIAAAD9//X/AQAFAAIAAAD+//X/AQADAAIAAAD4//T/AQAFAAEAAAD5//T/AQAFAAEAAAD6//T/AQAFAAEAAAD7//T/AQAFAAEAAAD8//T/AQAFAAEAAAD9//T/AQAFAAEAAAD+//T/AQADAAIAAAD4//P/AQAFAAAAAAD5//P/AQAFAAAAAAD6//P/AQAFAAAAAAD7//P/AQAFAAAAAAD8//P/AQAFAAAAAAD9//P/AQAFAAAAAAD3//P/AQAEAAAAAAD3//T/AQABAAAAAAD3//X/AQABAAAAAAD+//P/AQAGAAAAAAD+/wUAAQADAAMAAAA=")
+tile_set = SubResource("TileSet_4xmqs")
+
+[node name="HidingSpot" parent="." unique_id=492070324 groups=["navigation"] instance=ExtResource("8_imek5")]
+position = Vector2(-611, -695)
+
+[node name="Player" parent="." unique_id=1530642053 instance=ExtResource("1_qlpi1")]
+position = Vector2(-610, -308)
+
+[node name="PickupKey" parent="." unique_id=1671139198 instance=ExtResource("3_8gxbd")]
+position = Vector2(-626, 113)
+scale = Vector2(3, 3)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=365450202]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_jso0p")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1721896001 groups=["navigation"]]
+tile_set = SubResource("TileSet_kb5vy")
+
+[node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("9_imek5")]
+position = Vector2(-1038, 133)
+dest_scene = "uid://dycxqtledyan2"
+door_id = 1
+target_door_id = 2
+enter_direction = 2
+
+[node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
+position = Vector2(100, 0)
+
+[node name="Door" parent="." unique_id=89830354 instance=ExtResource("10_1ekks")]
+position = Vector2(-645, -1400)
+scale = Vector2(4, 4)
+dest_scene = "uid://bn0h4ijn3j5m1"
+door_id = 3
+target_door_id = 4
+
+[node name="CollisionShape2D" parent="Door/StaticBody2D" parent_id_path=PackedInt32Array(89830354, 590905828) index="0" unique_id=559985602]
+position = Vector2(-0.5, 21)
+
+[node name="Travel" parent="Door" index="4" unique_id=1917196863]
+position = Vector2(1.5, -19)
+
+[node name="CollisionShape2D" parent="Door/Travel" index="0" unique_id=434407247]
+position = Vector2(0.24999999, 50.5)
+
+[node name="Enemy" parent="." unique_id=387328203 instance=ExtResource("4_tmjas")]
+position = Vector2(-620, 514)
+
+[editable path="Travel"]
+[editable path="Door"]
+[editable path="Door/Travel"]

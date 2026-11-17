@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://dgbou7ahbj2rm"]
 
+[ext_resource type="Script" uid="uid://cp4xp52q5u0x3" path="res://area_0/area_0_2.gd" id="1_1awg3"]
 [ext_resource type="Texture2D" uid="uid://bqe5qy62ydfvk" path="res://area_0/area0_tileset.png" id="1_pecb1"]
 [ext_resource type="Texture2D" uid="uid://b8y13a6p6ggkb" path="res://area_0/area0_furniture.png" id="2_w5tow"]
 [ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="3_m4x2o"]
 [ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="4_w5tow"]
+[ext_resource type="PackedScene" uid="uid://decpi314ufy2y" path="res://interaction/interact_spot.tscn" id="6_q52qh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8jqk"]
 resource_name = "tile0"
@@ -129,7 +131,11 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w5tow")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t84tr"]
+size = Vector2(209, 270)
+
 [node name="Area02" type="Node2D" unique_id=1611793265]
+script = ExtResource("1_1awg3")
 
 [node name="Tileset" type="TileMapLayer" parent="." unique_id=1322282536]
 tile_map_data = PackedByteArray("AAD+//z/AAAEAAQAAAD+//3/AAABAAQAAAD+//7/AAABAAQAAAD+////AAABAAQAAAD+/wAAAAABAAQAAAD+/wEAAAABAAQAAAD///z/AAAFAAQAAAD///3/AAAFAAUAAAD///7/AAAFAAYAAAD/////AAACAAUAAAD//wAAAAACAAUAAAD//wEAAAACAAUAAAAAAPz/AAAFAAQAAAAAAP3/AAAFAAUAAAAAAP7/AAAFAAYAAAAAAP//AAACAAUAAAAAAAAAAAACAAUAAAAAAAEAAAACAAUAAAABAPz/AAAFAAQAAAABAP3/AAAFAAUAAAABAP7/AAAFAAYAAAABAP//AAACAAUAAAABAAEAAAACAAUAAAACAPz/AAAFAAQAAAACAP3/AAAFAAUAAAACAP7/AAAFAAYAAAACAP//AAACAAUAAAACAAAAAAACAAUAAAACAAEAAAACAAUAAAAEAPz/AAAFAAQAAAAEAP3/AAAFAAUAAAAEAP7/AAAFAAYAAAAEAP//AAACAAUAAAAEAAAAAAACAAUAAAAEAAEAAAACAAUAAAAFAPz/AAAFAAQAAAAFAP3/AAAFAAUAAAAFAP7/AAAFAAYAAAAFAP//AAACAAUAAAAFAAAAAAACAAUAAAAFAAEAAAACAAUAAAAGAPz/AAAGAAQAAAAGAP3/AAADAAYAAAAGAP7/AAADAAYAAAAGAP//AAADAAYAAAAGAAAAAAADAAYAAAAGAAEAAAAHAAYAAAADAP//AAACAAUAAAADAAAAAAACAAUAAAADAAEAAAACAAUAAAADAPz/AAAFAAQAAAADAP3/AAAFAAUAAAADAP7/AAAFAAYAAAD+/wIAAAAGAAYAAAD+/wMAAAAGAAcAAAD+/wQAAAAAAAYAAAD//wIAAAACAAUAAAD//wMAAAACAAUAAAD//wQAAAABAAYAAAAAAAIAAAACAAUAAAAAAAMAAAACAAUAAAAAAAQAAAABAAYAAAABAAIAAAACAAUAAAABAAMAAAACAAUAAAABAAQAAAABAAYAAAACAAIAAAACAAUAAAACAAMAAAACAAUAAAACAAQAAAABAAYAAAADAAIAAAACAAUAAAADAAMAAAACAAUAAAAEAAIAAAACAAUAAAAEAAMAAAACAAUAAAAEAAQAAAABAAYAAAAFAAIAAAACAAUAAAAFAAMAAAACAAUAAAAFAAQAAAABAAYAAAAGAAIAAAAHAAcAAAAGAAMAAAADAAYAAAAGAAQAAAADAAcAAAADAAQAAAABAAYAAAABAAAAAAACAAUAAAA=")
@@ -156,4 +162,14 @@ enter_direction = 3
 [node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
 position = Vector2(-100, 0)
 
+[node name="InteractSpot" parent="." unique_id=1871968309 instance=ExtResource("6_q52qh")]
+position = Vector2(-151, 400)
+one_time = true
+transition = true
+
+[node name="CollisionShape2D" parent="InteractSpot" index="0" unique_id=1801581055]
+position = Vector2(8, -24)
+shape = SubResource("RectangleShape2D_t84tr")
+
 [editable path="Travel"]
+[editable path="InteractSpot"]

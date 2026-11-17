@@ -31,8 +31,8 @@ func interact(_player: Node) -> void:
 
 	Inventory.add_item(item_id, amount)
 
-	if not pickup_text.is_empty():
-		DialogueController.say("", pickup_text)
+	#if not pickup_text.is_empty():
+		#DialogueController.say("", pickup_text)
 
 	set_prompt_visible(false)
 

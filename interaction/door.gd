@@ -83,14 +83,14 @@ func can_interact(_player: Node) -> bool:
 func interact(_player: Node) -> void:
 	if not locked:
 		return
-
-	if required_item.is_empty():
-		DialogueController.say("", locked_text)
-		return
-
-	if not Inventory.has_item(required_item):
-		DialogueController.say("", locked_text)
-		return
+#
+	#if required_item.is_empty():
+		#DialogueController.say("", locked_text)
+		#return
+#
+	#if not Inventory.has_item(required_item):
+		#DialogueController.say("", locked_text)
+		#return
 
 	if consume_key:
 		Inventory.remove_item(required_item)
@@ -105,8 +105,8 @@ func interact(_player: Node) -> void:
 
 	set_prompt_visible(false)
 
-	if not unlocked_text.is_empty():
-		DialogueController.say("", unlocked_text)
+	#if not unlocked_text.is_empty():
+		#DialogueController.say("", unlocked_text)
 
 
 func _set_opened(value: bool) -> void:

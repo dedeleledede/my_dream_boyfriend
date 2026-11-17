@@ -54,8 +54,6 @@ func _ready() -> void:
 
 	await get_tree().physics_frame
 
-	SceneManager.finish_transition()
-
 	if not active or not overlaps_body(player):
 		arrival_locked = false
 
@@ -71,9 +69,6 @@ func _physics_process(_delta: float) -> void:
 		return
 
 	if travel_started:
-		return
-
-	if SceneManager.is_transitioning:
 		return
 
 	if not Game.can_player_move():
