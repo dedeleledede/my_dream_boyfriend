@@ -1,7 +1,7 @@
 extends Node
 
 var transition_screen:Transition
-var _transition_manager_scene:PackedScene = preload("res://game_ui/transition_manager.tscn")
+var _transition_manager_scene:PackedScene = preload("res://game_resources/transition_manager.tscn")
 
 var previous_door_id: int = -1
 var target_door_id: int = -1

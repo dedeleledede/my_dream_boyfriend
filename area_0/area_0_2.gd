@@ -4,6 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await update_cutscenes()
+	Game.interacted.connect(_on_interacted)
 	pass # Replace with function body.
 
 func update_cutscenes():
@@ -15,3 +16,11 @@ func update_cutscenes():
 			
 func cutscene_home_event1_2():
 	print ("temp2")
+
+func _on_interacted(id: String) -> void:
+	match id:
+		"bleh":
+			print("bleh")
+		"blah":
+			print("blah")
+			$InteractSpot2.enable()

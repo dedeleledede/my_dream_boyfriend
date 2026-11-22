@@ -1,6 +1,6 @@
 extends Node
 
-@onready var pause_menu_scene: PackedScene = preload("res://game_ui/ui_menus/pause_menu.tscn")
+@onready var pause_menu_scene: PackedScene = preload("res://game_resources/ui_menus/pause_menu.tscn")
 var pause_menu: Node = null
 
 var flags := {
@@ -11,13 +11,32 @@ var flags := {
 	"ending_event_dream": false,
 	"ending_event_nightmare": false,
 	"ending_event_lucid":false}
+	
+#----------------------
 
-#flags:
-	#world:
-	#endings: dream, nightmare, lucid
+var consumed_interactables: Dictionary = {}
+
+var unlocked_interactables: Dictionary = {}
+
+signal interacted(id: String)
+
+#----------
 
 
-		
+func mark_consumed(id: String) -> void:
+	consumed_interactables[id] = true
+	
+func is_consumed(id: String) -> bool:
+	return consumed_interactables.has(id)
+	
+func mark_enabled(id: String) -> void:
+	unlocked_interactables[id] = true
+	
+func is_enabled(id: String) -> bool:
+	return unlocked_interactables.has(id)
+
+#-----------------
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if pause_menu == null:
@@ -26,9 +45,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			close_pause()
 
 func open_pause() -> void:
-	pause_menu = pause_menu_scene.instantiate()
-	add_child(pause_menu)
-	get_tree().paused = true
+	if Game.state == Game.State.EXPLORATION:
+		pause_menu = pause_menu_scene.instantiate()
+		Game.set_state(Game.State.MENU)
+		add_child(pause_menu)
+		get_tree().paused = true
 
 func close_pause() -> void:
 	pause_menu.queue_free()

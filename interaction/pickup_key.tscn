@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu1n2ksm5ci4w" path="res://interaction/pickup.gd" id="1_o36qr"]
 [ext_resource type="Texture2D" uid="uid://c0jvrcl1hba4a" path="res://temp_resources/key.png" id="2_52t7v"]
-[ext_resource type="Texture2D" uid="uid://bcdrw31lhnc8d" path="res://ui_elem/pointer.png" id="3_hd3rq"]
+[ext_resource type="Texture2D" uid="uid://bcdrw31lhnc8d" path="res://ui_resources/pointer.png" id="3_hd3rq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52t7v"]
 size = Vector2(24, 24)

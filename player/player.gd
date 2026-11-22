@@ -5,8 +5,18 @@ var facing_direction: Vector2 = Vector2.DOWN
 
 @onready var movement: Node = $Movement
 @onready var interaction: Node = $Interaction
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var pointer_bubble: TextureRect = $pointerBubble
 
 
+func _ready() -> void:
+	hide_pointer()
+
+
+func play_anim(anim_name: String) -> void:
+	animated_sprite_2d.play(anim_name)
+	
 func _physics_process(delta: float) -> void:
 	if Game.can_player_move():
 		movement.physics_update(delta)
@@ -51,3 +61,10 @@ func restart_after_death() -> void:
 		return
 
 	get_tree().reload_current_scene()
+
+
+func show_pointer() -> void:
+	pointer_bubble.show()
+
+func hide_pointer() -> void:
+	pointer_bubble.hide()

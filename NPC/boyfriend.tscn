@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://dvjvkw31bd0gv"]
 
 [ext_resource type="Texture2D" uid="uid://d0q8puerdcb5k" path="res://NPC/boyfriendsprite.png" id="1_86g1g"]
+[ext_resource type="Script" uid="uid://cc7h28neoqg40" path="res://NPC/boyfriend.gd" id="1_k5bqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol62n"]
+atlas = ExtResource("1_86g1g")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eylcc"]
+atlas = ExtResource("1_86g1g")
+region = Rect2(128, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_381hg"]
+atlas = ExtResource("1_86g1g")
+region = Rect2(256, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lpj3"]
+atlas = ExtResource("1_86g1g")
+region = Rect2(0, 256, 128, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k5bqs"]
 atlas = ExtResource("1_86g1g")
@@ -18,10 +35,6 @@ region = Rect2(256, 512, 128, 256)
 atlas = ExtResource("1_86g1g")
 region = Rect2(384, 512, 128, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ol62n"]
-atlas = ExtResource("1_86g1g")
-region = Rect2(0, 0, 128, 256)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf2w1"]
 atlas = ExtResource("1_86g1g")
 region = Rect2(128, 0, 128, 256)
@@ -37,10 +50,6 @@ region = Rect2(384, 0, 128, 256)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ca1gi"]
 atlas = ExtResource("1_86g1g")
 region = Rect2(0, 1024, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eylcc"]
-atlas = ExtResource("1_86g1g")
-region = Rect2(128, 1024, 128, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isiiq"]
 atlas = ExtResource("1_86g1g")
@@ -58,17 +67,9 @@ region = Rect2(0, 768, 128, 256)
 atlas = ExtResource("1_86g1g")
 region = Rect2(128, 768, 128, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_381hg"]
-atlas = ExtResource("1_86g1g")
-region = Rect2(256, 768, 128, 256)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7xgj"]
 atlas = ExtResource("1_86g1g")
 region = Rect2(384, 768, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4lpj3"]
-atlas = ExtResource("1_86g1g")
-region = Rect2(0, 256, 128, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f465c"]
 atlas = ExtResource("1_86g1g")
@@ -86,6 +87,38 @@ region = Rect2(384, 256, 128, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ol62n")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eylcc")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_381hg")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lpj3")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_k5bqs")
 }, {
 "duration": 1.0,
@@ -98,7 +131,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_411jw")
 }],
 "loop": 0,
-"name": &"idle",
+"name": &"to_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -170,16 +203,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jso0p"]
+size = Vector2(90, 108)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iivr6"]
 radius = 25.0
 height = 80.0
 
 [node name="Boyfriend" type="CharacterBody2D" unique_id=965281321]
+script = ExtResource("1_k5bqs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=587297265]
 sprite_frames = SubResource("SpriteFrames_r5f06")
-animation = &"idle"
+animation = &"to_idle"
+frame = 3
+frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=138919867]
+[node name="InteractableArea" type="Area2D" parent="." unique_id=298313090]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1656327653]
+position = Vector2(0, 63)
+shape = SubResource("RectangleShape2D_jso0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1680324555]
 position = Vector2(0, 69)
 shape = SubResource("CapsuleShape2D_iivr6")

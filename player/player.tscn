@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://db5dpm33ohmqv" path="res://player/player.gd" id="1_yw30f"]
 [ext_resource type="Script" uid="uid://cqch4f08tlkwk" path="res://player/player_movement.gd" id="3_qjkh3"]
 [ext_resource type="Script" uid="uid://dno12tvvcs3sl" path="res://player/player_interaction.gd" id="4_g6k8r"]
-[ext_resource type="Texture2D" uid="uid://b6jdwbxww0ny8" path="res://ui_elem/stamina_gauge_background.png" id="6_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://b6jdwbxww0ny8" path="res://ui_resources/stamina_gauge_background.png" id="6_hg6s5"]
 [ext_resource type="Script" uid="uid://dgyb166qjxoe5" path="res://player/player_stamina.gd" id="7_boad6"]
-[ext_resource type="Texture2D" uid="uid://cbpidymiicunq" path="res://ui_elem/stamina_fill.png" id="8_8t03j"]
+[ext_resource type="Texture2D" uid="uid://cbpidymiicunq" path="res://ui_resources/stamina_fill.png" id="8_8t03j"]
 [ext_resource type="Script" uid="uid://nu7fo8kpfvbs" path="res://player/player_stamina_ui.gd" id="8_rgyib"]
-[ext_resource type="Texture2D" uid="uid://djc6x5pl0a1gd" path="res://ui_elem/stamina_gauge.png" id="9_8t03j"]
+[ext_resource type="Texture2D" uid="uid://djc6x5pl0a1gd" path="res://ui_resources/stamina_gauge.png" id="9_8t03j"]
 [ext_resource type="Texture2D" uid="uid://j3hmlsmsclxx" path="res://player/playersprite.png" id="9_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://bcdrw31lhnc8d" path="res://ui_resources/pointer.png" id="10_8t03j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrag"]
 radius = 48.0
@@ -200,6 +201,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_vgp2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pointerBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-43, -177)]
+}
+
+[sub_resource type="Animation" id="Animation_t84tr"]
+resource_name = "bounce_interact_bubble"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pointerBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1.035264, 9.513644),
+"update": 0,
+"values": [Vector2(-43, -177), Vector2(-43, -170)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ieo8"]
+_data = {
+&"RESET": SubResource("Animation_vgp2l"),
+&"bounce_interact_bubble": SubResource("Animation_t84tr")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1530642053]
 collision_layer = 2
 script = ExtResource("1_yw30f")
@@ -209,8 +248,8 @@ position = Vector2(0, 61)
 shape = SubResource("CapsuleShape2D_pnrag")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=930142171]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1584141809]
 position = Vector2(0, 63)
@@ -251,5 +290,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1389825203]
 sprite_frames = SubResource("SpriteFrames_ml1ua")
-animation = &"idle_left"
-frame_progress = 0.26486665
+animation = &"idle_down"
+
+[node name="pointerBubble" type="TextureRect" parent="." unique_id=92052744]
+offset_left = -43.0
+offset_top = -177.0
+offset_right = 117.0
+offset_bottom = -21.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_8t03j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=247997149]
+libraries/ = SubResource("AnimationLibrary_2ieo8")
+autoplay = &"bounce_interact_bubble"

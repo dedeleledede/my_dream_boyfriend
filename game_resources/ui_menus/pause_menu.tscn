@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://do0txeqjrjw4a"]
+
+[ext_resource type="Script" uid="uid://dmvrnwl0jpjmw" path="res://game_resources/ui_menus/pause_menu.gd" id="1_7d1xp"]
+[ext_resource type="PackedScene" uid="uid://cv32xrn74w5a7" path="res://game_resources/ui_elements/menu_frame.tscn" id="2_u0d6h"]
+[ext_resource type="PackedScene" uid="uid://ct1s6mxpiakml" path="res://game_resources/ui_elements/custom_button.tscn" id="3_htmss"]
+[ext_resource type="Texture2D" uid="uid://7p7evkn4t8v4" path="res://ui_resources/frame_decor_mc_offdream.png" id="4_p5okb"]
+[ext_resource type="PackedScene" uid="uid://dsuelamhytdpl" path="res://game_resources/ui_elements/lovemeter_gauge.tscn" id="5_57jg7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iivr6"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=303736172]
+process_mode = 2
+script = ExtResource("1_7d1xp")
+
+[node name="MenuFrame" parent="." unique_id=2005478173 instance=ExtResource("2_u0d6h")]
+
+[node name="Header" parent="MenuFrame" index="0" unique_id=96366412]
+modulate = Color(0.972549, 0.92941177, 0.76862746, 1)
+
+[node name="MenuTitle" parent="MenuFrame/Header" index="1" unique_id=1679761798]
+text = "PAUSED"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=380106179]
+offset_right = 2048.0
+offset_bottom = 2048.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_p5okb")
+
+[node name="Panel" type="Panel" parent="." unique_id=694807494]
+offset_left = 144.0
+offset_top = 152.0
+offset_right = 464.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iivr6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=480062116]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 632.0
+offset_bottom = 1008.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 250
+
+[node name="save" parent="Panel/VBoxContainer" unique_id=668693985 instance=ExtResource("3_htmss")]
+layout_mode = 2
+
+[node name="TextureButton" parent="Panel/VBoxContainer/save" index="0" unique_id=949703461]
+button_text = "Save"
+
+[node name="inventory" parent="Panel/VBoxContainer" unique_id=1865926794 instance=ExtResource("3_htmss")]
+layout_mode = 2
+
+[node name="TextureButton" parent="Panel/VBoxContainer/inventory" index="0" unique_id=949703461]
+button_text = "Inventory"
+
+[node name="option" parent="Panel/VBoxContainer" unique_id=385869144 instance=ExtResource("3_htmss")]
+layout_mode = 2
+
+[node name="TextureButton" parent="Panel/VBoxContainer/option" index="0" unique_id=949703461]
+button_text = "Options"
+
+[node name="exit" parent="Panel/VBoxContainer" unique_id=1911306201 instance=ExtResource("3_htmss")]
+layout_mode = 2
+
+[node name="TextureButton" parent="Panel/VBoxContainer/exit" index="0" unique_id=949703461]
+button_text = "Exit"
+
+[node name="LovemeterGauge" parent="." unique_id=2080986599 instance=ExtResource("5_57jg7")]
+offset_left = 144.0
+offset_top = 747.0
+offset_right = 144.0
+offset_bottom = 747.0
+
+[editable path="MenuFrame"]
+[editable path="Panel/VBoxContainer/save"]
+[editable path="Panel/VBoxContainer/inventory"]
+[editable path="Panel/VBoxContainer/option"]
+[editable path="Panel/VBoxContainer/exit"]

@@ -131,9 +131,6 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w5tow")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t84tr"]
-size = Vector2(209, 270)
-
 [node name="Area02" type="Node2D" unique_id=1611793265]
 script = ExtResource("1_1awg3")
 
@@ -162,14 +159,12 @@ enter_direction = 3
 [node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
 position = Vector2(-100, 0)
 
-[node name="InteractSpot" parent="." unique_id=1871968309 instance=ExtResource("6_q52qh")]
-position = Vector2(-151, 400)
-one_time = true
-transition = true
+[node name="IntroBathTrigger" parent="." unique_id=1871968309 instance=ExtResource("6_q52qh")]
+position = Vector2(-171, 381)
+id = "intro_bath"
 
-[node name="CollisionShape2D" parent="InteractSpot" index="0" unique_id=1801581055]
-position = Vector2(8, -24)
-shape = SubResource("RectangleShape2D_t84tr")
+[node name="NightModule" type="CanvasModulate" parent="." unique_id=1813325200]
+visible = false
+color = Color(0.325335, 0.26981834, 0.45188498, 1)
 
 [editable path="Travel"]
-[editable path="InteractSpot"]
