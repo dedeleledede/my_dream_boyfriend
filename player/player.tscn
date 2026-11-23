@@ -293,6 +293,7 @@ sprite_frames = SubResource("SpriteFrames_ml1ua")
 animation = &"idle_down"
 
 [node name="pointerBubble" type="TextureRect" parent="." unique_id=92052744]
+visible = false
 offset_left = -43.0
 offset_top = -177.0
 offset_right = 117.0

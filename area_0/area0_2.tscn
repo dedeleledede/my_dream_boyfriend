@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="3_m4x2o"]
 [ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="4_w5tow"]
 [ext_resource type="PackedScene" uid="uid://decpi314ufy2y" path="res://interaction/interact_spot.tscn" id="6_q52qh"]
+[ext_resource type="Texture2D" uid="uid://brv0v7yp73ba1" path="res://area_0/bedbf.png" id="7_nob53"]
+[ext_resource type="Texture2D" uid="uid://cwi4cfr12yxo6" path="res://area_0/bedboth.png" id="8_kl5hp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8jqk"]
 resource_name = "tile0"
@@ -131,6 +133,182 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w5tow")
 
+[sub_resource type="Animation" id="Animation_kl5hp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BedWBF:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(353, 90)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BedWB:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NightModule:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nob53"]
+resource_name = "cutscene_home_event3a"
+length = 3.7666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 2, 2.7, 3.0666666),
+"transitions": PackedFloat32Array(1, 0.28717455, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(900, 200), Vector2(700, 200), Vector2(700, 200), Vector2(300, 200), Vector2(300, 0), Vector2(240, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BedWBF:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": ["walk_left"],
+"method": &"play_anim"
+}, {
+"args": ["idle_left"],
+"method": &"play_anim"
+}, {
+"args": ["walk_left"],
+"method": &"play_anim"
+}, {
+"args": ["walk_up"],
+"method": &"play_anim"
+}, {
+"args": ["walk_left"],
+"method": &"play_anim"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 3.7666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"emit_event"
+}, {
+"args": [],
+"method": &"emit_event"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BedWB:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.2333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NightModule:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kl5hp"]
+_data = {
+&"RESET": SubResource("Animation_kl5hp"),
+&"cutscene_home_event3a": SubResource("Animation_nob53")
+}
+
 [node name="Area02" type="Node2D" unique_id=1611793265]
 script = ExtResource("1_1awg3")
 
@@ -166,5 +344,24 @@ id = "intro_bath"
 [node name="NightModule" type="CanvasModulate" parent="." unique_id=1813325200]
 visible = false
 color = Color(0.325335, 0.26981834, 0.45188498, 1)
+
+[node name="BedWBF" type="TextureRect" parent="." unique_id=1328937852]
+visible = false
+offset_left = -108.0
+offset_top = -247.0
+offset_right = 240.0
+offset_bottom = 202.0
+texture = ExtResource("7_nob53")
+
+[node name="BedWB" type="TextureRect" parent="." unique_id=1473337465]
+visible = false
+offset_left = -108.0
+offset_top = -247.0
+offset_right = 240.0
+offset_bottom = 202.0
+texture = ExtResource("8_kl5hp")
+
+[node name="CutscenePlayer" type="AnimationPlayer" parent="." unique_id=2106009528]
+libraries/ = SubResource("AnimationLibrary_kl5hp")
 
 [editable path="Travel"]

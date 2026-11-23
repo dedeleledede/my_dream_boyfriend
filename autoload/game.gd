@@ -4,8 +4,11 @@ extends Node
 var pause_menu: Node = null
 
 var flags := {
+	"home_stage": 1,
+	"bf_dialogue_available": false,
 	"home_event1_1": false,
-	"home_event1_2": false,
+	"home_event1_2": true, #setting it to true first to lock it until requirements are met 
+	"home_event1_3": true,
 	"home_event2": false,
 	"home_event3": false,
 	"ending_event_dream": false,

@@ -1,0 +1,17 @@
+[background arg="#0e061cff" fade="1.0"]
+[background arg="#0e061cff" fade="0.0"]
+[wait time="3.0"]
+[background arg="res://game_resources/cgs/home_1a.png" fade="1.0" wait="true"]
+When I walked into the kitchen, his proud smile greeted me.
+boyfriend: For today, I've made spicy chicken noodles.
+[background arg="res://game_resources/cgs/home_1b.png" fade="0.0"]
+boyfriend: You deserve something tasty to cheer you up after all!
+mc: Seriously... How do you know how to cook so many things...?
+mc: It's amazing.
+boyfriend: You naturally put a lot of effort into things you love.
+[background arg="res://game_resources/cgs/home_1c.png" fade="0.0"]
+boyfriend: And for me personally... I love you. The most.
+mc: ...Y-You say such things so easily...
+My boyfriend is a great man.
+I don't know why I have this nagging feeling in my chest whenever we are together...
+Sometimes I feel like I'm not doing enough like he is.

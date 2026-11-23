@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dl4ftcxqxinig" path="res://player/player.tscn" id="3_x1h4b"]
 [ext_resource type="PackedScene" uid="uid://crg1l6cs100i0" path="res://interaction/travel.tscn" id="4_1mex5"]
 [ext_resource type="PackedScene" uid="uid://dvjvkw31bd0gv" path="res://NPC/boyfriend.tscn" id="5_6v2ak"]
+[ext_resource type="Texture2D" uid="uid://c3ka2xrvo8iyh" path="res://area_0/tableset.png" id="7_1mex5"]
+[ext_resource type="PackedScene" uid="uid://decpi314ufy2y" path="res://interaction/interact_spot.tscn" id="8_hwma6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngr50"]
 resource_name = "tile0"
@@ -174,10 +176,58 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(400, 200)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:disable_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boyfriend:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TableSet:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_x1h4b"]
-resource_name = "cutscene_home_event1"
-length = 6.508333
+resource_name = "cutscene_home_event1a"
+length = 4.2
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -231,10 +281,10 @@ tracks/3/path = NodePath("Boyfriend:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.1166663, 2.6166663, 4, 4.366667, 5.7999997, 6.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.1166663, 2.6166663, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1040, 40), Vector2(1040, 40), Vector2(1040, 200), Vector2(500, 200), Vector2(500, 200), Vector2(1040, 200), Vector2(1040, 40)]
+"values": [Vector2(1040, 40), Vector2(1040, 40), Vector2(1040, 200), Vector2(500, 200)]
 }
 tracks/4/type = "method"
 tracks/4/imported = false
@@ -243,8 +293,8 @@ tracks/4/path = NodePath("Boyfriend")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.4166665, 2.1166663, 2.6166663, 4, 4.366667, 5.8, 6.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.4166665, 2.1166663, 2.6166663, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": ["idle_up"],
 "method": &"play_anim"
@@ -260,7 +310,48 @@ tracks/4/keys = {
 }, {
 "args": ["idle_left"],
 "method": &"play_anim"
-}, {
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hwma6"]
+resource_name = "cutscene_home_event1b"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boyfriend:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 200), Vector2(1040, 200), Vector2(1040, 40)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_event"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boyfriend")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4000001, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
 "args": ["walk_right"],
 "method": &"play_anim"
 }, {
@@ -272,10 +363,90 @@ tracks/4/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_svag2"]
+resource_name = "cutscene_home_event2a"
+length = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(820, 400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:disable_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boyfriend:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_event"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TableSet:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mex5"]
 _data = {
 &"RESET": SubResource("Animation_1mex5"),
-&"cutscene_home_event1": SubResource("Animation_x1h4b")
+&"cutscene_home_event1a": SubResource("Animation_x1h4b"),
+&"cutscene_home_event1b": SubResource("Animation_hwma6"),
+&"cutscene_home_event2a": SubResource("Animation_svag2")
 }
 
 [node name="Area01" type="Node2D" unique_id=1226408319]
@@ -304,8 +475,22 @@ position = Vector2(100, 0)
 
 [node name="Boyfriend" parent="." unique_id=965281321 instance=ExtResource("5_6v2ak")]
 position = Vector2(1041, 44)
+id = "boyfriend_talked"
 
 [node name="CutscenePlayer" type="AnimationPlayer" parent="." unique_id=1040008895]
 libraries/ = SubResource("AnimationLibrary_1mex5")
+
+[node name="TableSet" type="TextureRect" parent="." unique_id=120518588]
+visible = false
+offset_left = 640.0
+offset_top = 256.0
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("7_1mex5")
+
+[node name="InteractBalcony" parent="." unique_id=1871968309 instance=ExtResource("8_hwma6")]
+position = Vector2(1311, 768)
+id = "balcony_try"
+destroy_after_use = false
 
 [editable path="Travel"]

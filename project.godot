@@ -30,8 +30,16 @@ directories/dch_directory={
 "mc": "res://game_resources/mc.dch"
 }
 directories/dtl_directory={
+"boyfriend_home1a": "res://area_0/boyfriend_home1a.dtl",
+"boyfriend_home1b": "res://area_0/boyfriend_home1b.dtl",
+"boyfriend_home1c": "res://area_0/boyfriend_home1c.dtl",
 "home_event1a": "res://area_0/home_event1a.dtl",
 "home_event1b": "res://area_0/home_event1b.dtl",
+"home_event1c": "res://area_0/home_event1c.dtl",
+"home_event1d": "res://area_0/home_event1d.dtl",
+"home_event1e": "res://area_0/home_event1e.dtl",
+"home_event1f": "res://area_0/home_event1f.dtl",
+"interactwith_balcony": "res://area_0/interactwith_balcony.dtl",
 "timeline": "res://timeline.dtl"
 }
 layout/style_directory={
