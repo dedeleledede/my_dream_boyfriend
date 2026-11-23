@@ -54,97 +54,70 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ngr50")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwma6"]
+texture = ExtResource("2_6v2ak")
+texture_region_size = Vector2i(128, 128)
+10:4/size_in_atlas = Vector2i(2, 2)
+10:4/0 = 0
+10:4/0/texture_origin = Vector2i(128, 192)
+10:6/size_in_atlas = Vector2i(1, 2)
+10:6/0 = 0
+10:6/0/texture_origin = Vector2i(128, 64)
+
+[sub_resource type="TileSet" id="TileSet_ml1ua"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_hwma6")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcjm2"]
 resource_name = "furniture0"
 texture = ExtResource("2_6v2ak")
 texture_region_size = Vector2i(128, 128)
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-4:11/0 = 0
-4:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 64, -32, 32, -64, 0, -64, 0, -64, -64, 64, -64, 64, 64)
-0:9/0 = 0
-1:9/0 = 0
-1:12/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-0:10/0 = 0
+0:3/size_in_atlas = Vector2i(3, 2)
 0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
+0:3/0/texture_origin = Vector2i(0, 64)
+0:3/0/y_sort_origin = -64
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-115.2, -64, 115.2, -64, 166.40001, 12.800003, -166.4, 12.800003)
+3:3/size_in_atlas = Vector2i(1, 2)
 3:3/0 = 0
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -64, 64, -64, 64, 32, -32, 32)
-1:4/0 = 0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 32, -64, -64, 64, -64, 64, 32)
-2:4/0 = 0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 32, -64, -64, 32, -64, 32, 32)
-3:4/0 = 0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -64, 32, -64, 32, 32, -32, 32)
+3:3/0/texture_origin = Vector2i(0, 64)
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:5/size_in_atlas = Vector2i(3, 2)
 0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 64, 32, 32, 64, 32, 64, 64)
-1:5/0 = 0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, 32, 64, 32, 64, 64)
-2:5/0 = 0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 64, -32, 32, -64, 32, -64, 64)
-3:5/0 = 0
-0:6/0 = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -64, 32, -32, 64, -32, 64, -64)
-1:6/0 = 0
-1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -64, -32, 64, -32, 64, -64)
-2:6/0 = 0
-2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -64, -32, -32, -64, -32, -64, -64)
-3:6/0 = 0
-3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 64, 0, -64, 64, -64, 64, 64)
+0:5/0/texture_origin = Vector2i(0, 64)
+0:5/0/y_sort_origin = -64
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-115.2, -89.6, 115.2, -89.6, 115.2, -38.4, -115.2, -38.4)
+0:7/size_in_atlas = Vector2i(3, 1)
 0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 64, 0, -32, 64, -32, 64, 64)
-1:7/0 = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -32, 64, -32, 64, 64)
-2:7/0 = 0
-2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -32, 0, -32, 0, 64)
-3:7/0 = 0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 64, 0, -64, 64, -64, 64, 64)
-0:11/0 = 0
-0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, -32, -64, 64, -64, 64, 0)
-1:11/0 = 0
-1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 0, -64, -64, 64, -64, 64, 0)
-2:11/0 = 0
-2:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 0, -64, -64, 64, -64, 64, 0)
-3:11/0 = 0
-3:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 0, -64, -64, 64, -64, 64, 0)
-0:13/0 = 0
-0:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 64, 0, 64, 64, 0, 64)
-1:13/0 = 0
-1:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 0, -64, 64, 64, 64, 64, 0)
-2:13/0 = 0
-2:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 0, -32, 64, -64, 64)
-0:14/0 = 0
-0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 32, 0, -64, 64, -64, 64, 64)
-1:14/0 = 0
-1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-2:14/0 = 0
-2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -32, -64, -32, 64, -64, 64)
-0:15/0 = 0
-1:15/0 = 0
-1:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -64, 64, -64, 64, 0, 64, 0)
-2:15/0 = 0
-2:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -32, -64, -32, 0, -64, 0)
-10:7/0 = 0
-10:6/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-11:4/0 = 0
-10:4/0 = 0
-4:13/0 = 0
-4:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, -32, -64, 64, -64, 64, 32)
+0:7/0/y_sort_origin = -32
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-140.8, -38.4, 140.8, -38.4, 140.8, 64, -140.8, 64)
+0:8/size_in_atlas = Vector2i(5, 1)
+0:8/0 = 0
+0:9/size_in_atlas = Vector2i(2, 3)
+0:9/0 = 0
+0:9/0/texture_origin = Vector2i(64, 128)
+0:9/0/y_sort_origin = -64
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-192, -140.8, 64, -140.8, 64, -38.4, -192, -38.4)
+2:10/size_in_atlas = Vector2i(3, 2)
+2:10/0 = 0
+2:10/0/texture_origin = Vector2i(0, 64)
+2:10/0/y_sort_origin = -64
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-192, -140.8, 192, -140.8, 192, -38.4, 192, 64, 64, 64, 64, -38.4, -192, -38.4)
+4:12/size_in_atlas = Vector2i(1, 2)
 4:12/0 = 0
-4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 64, -32, -64, 64, -64, 64, 64)
+4:12/0/texture_origin = Vector2i(0, 64)
+4:12/0/y_sort_origin = -128
+4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -192, 64, -192, 64, -12.799999, -64, -12.799999)
+2:9/size_in_atlas = Vector2i(2, 1)
+2:9/0 = 0
+0:12/size_in_atlas = Vector2i(3, 4)
+0:12/0 = 0
+0:12/0/texture_origin = Vector2i(0, 192)
+0:12/0/y_sort_origin = -128
+0:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-140.8, -217.6, 12.800003, -243.2, 89.600006, -192, 89.600006, -38.4, -140.8, -115.2)
+3:5/size_in_atlas = Vector2i(1, 3)
+3:5/0 = 0
+3:5/0/texture_origin = Vector2i(0, 128)
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.799999, -192, 64, -192, 64, 64, -12.799999, 64)
 
 [sub_resource type="TileSet" id="TileSet_jso0p"]
 tile_size = Vector2i(128, 128)
@@ -155,7 +128,7 @@ sources/0 = SubResource("TileSetAtlasSource_qcjm2")
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Boyfriend:position")
+tracks/0/path = NodePath("YSort/Boyfriend:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -167,7 +140,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Player:position")
+tracks/1/path = NodePath("YSort/Player:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -179,7 +152,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Player:disable_mode")
+tracks/2/path = NodePath("YSort/Player:disable_mode")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -191,7 +164,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Player:visible")
+tracks/3/path = NodePath("YSort/Player:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -203,7 +176,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Boyfriend:visible")
+tracks/4/path = NodePath("YSort/Boyfriend:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -248,7 +221,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Player:position")
+tracks/1/path = NodePath("YSort/Player:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -260,7 +233,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Player")
+tracks/2/path = NodePath("YSort/Player")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -277,7 +250,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Boyfriend:position")
+tracks/3/path = NodePath("YSort/Boyfriend:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -289,7 +262,7 @@ tracks/3/keys = {
 tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Boyfriend")
+tracks/4/path = NodePath("YSort/Boyfriend")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -319,7 +292,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Boyfriend:position")
+tracks/0/path = NodePath("YSort/Boyfriend:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -345,7 +318,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Boyfriend")
+tracks/2/path = NodePath("YSort/Boyfriend")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -369,7 +342,7 @@ length = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player:position")
+tracks/0/path = NodePath("YSort/Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -381,7 +354,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Player:disable_mode")
+tracks/1/path = NodePath("YSort/Player:disable_mode")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -393,7 +366,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Player:visible")
+tracks/2/path = NodePath("YSort/Player:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -405,7 +378,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Boyfriend:visible")
+tracks/3/path = NodePath("YSort/Boyfriend:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -452,15 +425,29 @@ _data = {
 [node name="Area01" type="Node2D" unique_id=1226408319]
 script = ExtResource("1_x1h4b")
 
-[node name="Tileset" type="TileMapLayer" parent="." unique_id=41939280]
+[node name="Base" type="Node2D" parent="." unique_id=1124490402]
+
+[node name="Tileset" type="TileMapLayer" parent="Base" unique_id=41939280]
 tile_map_data = PackedByteArray("AAACAAAAAAACAAUAAAACAAEAAAACAAUAAAACAAIAAAACAAUAAAADAAIAAAACAAUAAAADAAMAAAACAAUAAAAEAAMAAAACAAUAAAAFAAMAAAACAAUAAAAFAAIAAAACAAUAAAAFAAEAAAACAAUAAAAEAAEAAAACAAUAAAAEAAAAAAACAAUAAAADAAAAAAACAAUAAAAGAAMAAAACAAUAAAAGAAIAAAACAAUAAAAGAAEAAAACAAUAAAAGAAAAAAACAAUAAAAFAAAAAAACAAUAAAADAAEAAAACAAUAAAACAAMAAAACAAUAAAAEAAIAAAACAAUAAAACAP3/AAAFAAQAAAACAP7/AAAFAAUAAAACAP//AAAFAAYAAAADAP3/AAAFAAQAAAADAP7/AAAFAAUAAAADAP//AAAFAAYAAAAEAP3/AAAFAAQAAAAEAP7/AAAFAAUAAAAEAP//AAAFAAYAAAAFAP3/AAAFAAQAAAAFAP7/AAAFAAUAAAAFAP//AAAFAAYAAAAGAP3/AAAFAAQAAAAGAP7/AAAFAAUAAAAGAP//AAAFAAYAAAAEAAQAAAACAAUAAAAEAAUAAAACAAUAAAAEAAYAAAACAAUAAAAFAAQAAAACAAUAAAAFAAUAAAACAAUAAAAFAAYAAAACAAUAAAAGAAQAAAACAAUAAAAGAAUAAAACAAUAAAAGAAYAAAACAAUAAAAHAAAAAAACAAUAAAAHAAEAAAACAAUAAAAIAAEAAAACAAUAAAAIAAIAAAACAAUAAAAIAAMAAAACAAUAAAAJAAMAAAACAAUAAAAJAAQAAAACAAUAAAAJAAUAAAACAAUAAAAIAAUAAAACAAUAAAAIAAYAAAACAAUAAAAHAAYAAAACAAUAAAAHAAUAAAACAAUAAAAHAAQAAAACAAUAAAAHAAMAAAACAAUAAAAHAAIAAAACAAUAAAAIAAQAAAACAAUAAAAIAAAAAAACAAUAAAAJAAAAAAACAAUAAAAJAAEAAAACAAUAAAAJAAIAAAACAAUAAAAJAAYAAAACAAUAAAAHAP3/AAAFAAQAAAAHAP7/AAAFAAUAAAAHAP//AAAFAAYAAAAIAP3/AAAFAAQAAAAIAP7/AAAFAAUAAAAIAP//AAAFAAYAAAAJAP3/AAAFAAQAAAAJAP7/AAAFAAUAAAAJAP//AAAFAAYAAAAKAP3/AAAGAAQAAAABAP3/AAAEAAQAAAABAAEAAAAGAAYAAAABAAIAAAAGAAcAAAADAAQAAAACAAUAAAACAAQAAAACAAUAAAABAAMAAAABAAQAAAABAAQAAAABAAQAAAABAAAAAAABAAQAAAABAP//AAABAAQAAAABAP7/AAABAAQAAAAKAP7/AAADAAYAAAAKAP//AAADAAYAAAAKAAAAAAADAAYAAAAKAAEAAAADAAYAAAAKAAIAAAADAAYAAAAKAAMAAAADAAYAAAAKAAQAAAADAAYAAAAKAAUAAAAHAAYAAAAKAAYAAAAHAAcAAAADAAUAAAACAAYAAAADAAYAAAABAAQAAAADAAcAAAABAAQAAAADAAgAAAAGAAYAAAADAAkAAAAGAAcAAAAEAAcAAAACAAUAAAAEAAgAAAACAAUAAAAEAAkAAAACAAUAAAAGAAkAAAACAAUAAAAGAAgAAAACAAUAAAAGAAcAAAACAAUAAAAFAAcAAAACAAUAAAAFAAgAAAACAAUAAAAFAAkAAAACAAUAAAAHAAkAAAACAAUAAAAIAAkAAAACAAUAAAAIAAgAAAACAAUAAAAIAAcAAAACAAUAAAAHAAcAAAACAAUAAAAHAAgAAAACAAUAAAAJAAkAAAACAAUAAAAJAAgAAAACAAUAAAAJAAcAAAACAAUAAAAKAAcAAAADAAYAAAAKAAgAAAADAAYAAAAKAAkAAAADAAYAAAADAAwAAAAAAAYAAAAEAAwAAAABAAYAAAAFAAwAAAABAAYAAAAGAAwAAAABAAYAAAAHAAwAAAABAAYAAAAIAAwAAAABAAYAAAAJAAwAAAABAAYAAAAKAAwAAAADAAcAAAADAAsAAAABAAQAAAAEAAsAAAACAAUAAAAFAAsAAAACAAUAAAAGAAsAAAACAAUAAAAHAAsAAAACAAUAAAAIAAsAAAACAAUAAAAJAAsAAAACAAUAAAAKAAsAAAADAAYAAAADAAoAAAABAAQAAAAKAAoAAAADAAYAAAAEAAoAAAACAAUAAAAFAAoAAAACAAUAAAAGAAoAAAACAAUAAAAHAAoAAAACAAUAAAAIAAoAAAACAAUAAAAJAAoAAAACAAUAAAACAAUAAAABAAYAAAABAAUAAAAAAAYAAAA=")
 tile_set = SubResource("TileSet_iivr6")
 
-[node name="Furniture" type="TileMapLayer" parent="." unique_id=67085860]
-tile_map_data = PackedByteArray("AAAHAP7/AAADAAkAAAAIAP7/AAACAAkAAAAHAP3/AAACAAgAAAAWAPv/AAADAA0AAAACAAEAAAAKAAYAAAACAAIAAAAKAAcAAAAFAP3/AAAAAAgAAAAGAP3/AAABAAgAAAAIAP3/AAADAAgAAAAJAP3/AAAEAAgAAAAHAAcAAAABAAQAAAAJAAcAAAADAAQAAAAJAAoAAAADAAYAAAAHAAsAAAABAAcAAAAHAAkAAAABAAYAAAADAP3/AAAKAAQAAAADAP7/AAAKAAUAAAAEAP3/AAALAAQAAAAEAP7/AAALAAUAAAAFAP7/AAAAAAkAAAAFAP//AAAAAAoAAAAFAAAAAAAAAAsAAAAGAP7/AAABAAkAAAAGAP//AAABAAoAAAAGAAAAAAABAAsAAAAHAP//AAACAAoAAAAHAAAAAAACAAsAAAAIAP//AAADAAoAAAAIAAAAAAADAAsAAAAJAP//AAAEAAoAAAAJAAAAAAAEAAsAAAAJAAEAAAAEAAwAAAAJAAIAAAAEAA0AAAAGAAIAAAABAAwAAAAFAAMAAAAAAA0AAAAFAAQAAAAAAA4AAAAGAAMAAAABAA0AAAAGAAQAAAABAA4AAAAHAAMAAAACAA0AAAAHAAQAAAACAA4AAAAFAAUAAAAAAA8AAAAGAAUAAAABAA8AAAAHAAUAAAACAA8AAAAGAAcAAAAAAAQAAAAGAAgAAAAAAAUAAAAGAAkAAAAAAAYAAAAGAAsAAAAAAAcAAAAHAAgAAAABAAUAAAAIAAcAAAACAAQAAAAIAAgAAAACAAUAAAAIAAkAAAACAAYAAAAIAAsAAAACAAcAAAAJAAkAAAADAAUAAAAJAAsAAAADAAcAAAAGAAYAAAAAAAMAAAAHAAYAAAABAAMAAAAIAAYAAAACAAMAAAAJAAYAAAADAAMAAAA=")
+[node name="YSort" type="Node2D" parent="." unique_id=1524301438]
+y_sort_enabled = true
+
+[node name="GroundLayer" type="TileMapLayer" parent="YSort" unique_id=999540461]
+tile_map_data = PackedByteArray("AAAEAP//AAAKAAQAAAADAAIAAAAKAAYAAAA=")
+tile_set = SubResource("TileSet_ml1ua")
+
+[node name="FurnitureLayer" type="TileMapLayer" parent="YSort" unique_id=67085860]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAWAPv/AAADAA0AAAAIAAAAAAACAAoAAAAJAAIAAAAEAAwAAAAGAAAAAAAAAAkAAAAIAP7/AAACAAkAAAAHAP3/AAAAAAgAAAAHAAsAAAAAAAcAAAAHAAcAAAAAAAMAAAAJAAcAAAADAAMAAAAJAAoAAAADAAUAAAAHAAkAAAAAAAUAAAAGAAUAAAAAAAwAAAA=")
 tile_set = SubResource("TileSet_jso0p")
 
-[node name="Player" parent="." unique_id=1530642053 instance=ExtResource("3_x1h4b")]
+[node name="Boyfriend" parent="YSort" unique_id=965281321 instance=ExtResource("5_6v2ak")]
+position = Vector2(1041, 44)
+id = "boyfriend_talked"
+
+[node name="Player" parent="YSort" unique_id=1530642053 instance=ExtResource("3_x1h4b")]
 position = Vector2(400, 200)
 
 [node name="Travel" parent="." unique_id=1917196863 instance=ExtResource("4_1mex5")]
@@ -472,10 +459,6 @@ enter_direction = 2
 
 [node name="SpawnPoint" parent="Travel" index="1" unique_id=949411097]
 position = Vector2(100, 0)
-
-[node name="Boyfriend" parent="." unique_id=965281321 instance=ExtResource("5_6v2ak")]
-position = Vector2(1041, 44)
-id = "boyfriend_talked"
 
 [node name="CutscenePlayer" type="AnimationPlayer" parent="." unique_id=1040008895]
 libraries/ = SubResource("AnimationLibrary_1mex5")

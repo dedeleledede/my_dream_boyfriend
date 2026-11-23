@@ -43,11 +43,13 @@ directories/dtl_directory={
 "timeline": "res://timeline.dtl"
 }
 layout/style_directory={
-"": "res://game_resources/dialogue_style.tres",
-"dialogue_style": "res://game_resources/dialogue_style.tres"
+"": "res://game_resources/dialogue_stylec.tres",
+"dialogue_stylea": "res://game_resources/dialogue_stylea.tres",
+"dialogue_styleb": "res://game_resources/dialogue_styleb.tres",
+"dialogue_stylec": "res://game_resources/dialogue_stylec.tres"
 }
-layout/style_list=["res://game_resources/dialogue_style.tres"]
-layout/default_style="res://game_resources/dialogue_style.tres"
+layout/style_list=["res://game_resources/dialogue_stylea.tres", "res://game_resources/dialogue_styleb.tres", "res://game_resources/dialogue_stylec.tres"]
+layout/default_style="res://game_resources/dialogue_stylec.tres"
 variables={
 "lovemeter": 0
 }
@@ -57,9 +59,9 @@ text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-animations/join_default_length=0.0
+animations/join_default_length=0.2
 animations/join_default_wait=false
-animations/leave_default_length=0.0
+animations/leave_default_length=0.2
 animations/leave_default_wait=false
 animations/cross_fade_default_length=0.0
 choices/autofocus_first=true
@@ -68,9 +70,9 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
-animations/join_default="Instant In"
+animations/join_default="Fade In"
 animations/cross_fade_default="Fade Cross"
-animations/leave_default="Instant Out"
+animations/leave_default="Fade Out"
 text/autopauses={}
 audio/channel_defaults={
 "": {

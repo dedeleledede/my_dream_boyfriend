@@ -31,12 +31,11 @@ func _ready() -> void:
 	monitoring = false
 
 	var current_scene := get_tree().current_scene
-	var player := current_scene.get_node_or_null("Player") as Player
+	var player := current_scene.find_child("Player", true, false) as Player
 
 	if player == null:
 		push_warning("Travel: não encontrou Player.")
-		SceneManager.finish_transition()
-		arrival_locked = false
+		arrival_locked = false 
 		return
 
 	player.global_position = spawn_point.global_position

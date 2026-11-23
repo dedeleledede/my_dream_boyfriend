@@ -1,3 +1,4 @@
+[signal arg="dialogue_ended"]
 join mc left
 join boyfriend right
 boyfriend: How was your day, little love?
@@ -18,4 +19,3 @@ mc (Sad): I see...
 I didn't know why, but he would always avoid the subject when it came to me asking questions about him
 At the same time I felt welcomed into his warm presence, there was always this barrier blocking me from him.
 Whatever it is that he is afraid of telling me... I want to someday let him realize I want to listen.
-Because that was what he did for me.

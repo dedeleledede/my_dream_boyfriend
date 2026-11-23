@@ -8,3 +8,6 @@ boyfriend: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euis
 update boyfriend (Happy)
 boyfriend: Or something.
 mc: ok...
+[signal arg="dialogue_ended"]
+weirdo
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod risus eget urna pharetra, ac feugiat magna auctor. Nullam libero risus, pretium in lacus ac, fermentum efficitur ex. In vel nisl nec mauris?
