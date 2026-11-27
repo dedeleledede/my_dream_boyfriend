@@ -32,6 +32,7 @@ script = ExtResource("2_reig0")
 scene = ExtResource("6_xm2xn")
 overrides = {
 "bold_font": "\"res://game_resources/font/PixelifySans-Bold.ttf\"",
+"box_animation_in": "0",
 "box_color_custom": "Color(1, 1, 1, 1)",
 "box_color_use_global": "false",
 "box_panel": "\"res://game_resources/dialogue_boxb.tres\"",

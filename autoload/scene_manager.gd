@@ -1,7 +1,6 @@
 extends Node
 
-var transition_screen:Transition
-var _transition_manager_scene:PackedScene = preload("res://game_resources/transition_manager.tscn")
+
 
 var previous_door_id: int = -1
 var target_door_id: int = -1
@@ -35,12 +34,9 @@ func travel_to(
 		#scene_path
 	#)
 	
-	transition_screen = _transition_manager_scene.instantiate() as Transition
-	get_tree().root.add_child(transition_screen)
-	transition_screen.start_transition()
-	await transition_screen.transition_in_complete
+	await TransitionManager.start_transition_scene()
 	call_deferred("_change_scene_deferred", scene_path)
-	transition_screen.finish_transition()
+	TransitionManager.finish_transition_scene()
 
 
 func _change_scene_deferred(scene_path: String) -> void:

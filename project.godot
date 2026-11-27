@@ -22,6 +22,8 @@ Inventory="*uid://dbcnanje3a5ow"
 SceneManager="*uid://uonotqecw5d2"
 SaveManager="*uid://dvckdinytfnkx"
 Dialogic="*uid://ds2q0uclmolvu"
+TransitionManager="*uid://7gg5xwrsok3w"
+ScreenShader="*uid://6gb3k3uray78"
 
 [dialogic]
 
@@ -98,7 +100,6 @@ runtime/balloon_path="res://game_ui/balloon.tscn"
 window/size/viewport_width=1024
 window/size/viewport_height=1024
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 

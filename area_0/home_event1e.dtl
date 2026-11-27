@@ -1,3 +1,4 @@
+do TransitionManager.fade_in()
 boyfriend: Little love, are you coming to bed?
 join mc left
 mc: Yeah.

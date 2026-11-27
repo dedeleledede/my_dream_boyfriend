@@ -31,6 +31,8 @@ func update_cutscenes():
 		
 
 func cutscene_home_event1_1():
+	TransitionManager.fade_in()
+	
 	cutscene_player.play("cutscene_home_event1a")
 	
 	await dialogue_requested
@@ -58,6 +60,8 @@ func cutscene_home_event1_2():
 	await dialogue_requested
 	cutscene_player.pause()
 	await Dialogic.timeline_ended
+	
+	TransitionManager.fade_in()
 	
 	Dialogic.start("home_event1d")
 	await Dialogic.timeline_ended

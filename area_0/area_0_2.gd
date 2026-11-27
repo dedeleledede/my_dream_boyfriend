@@ -25,13 +25,14 @@ func cutscene_home_event1_3():
 	cutscene_player.play("cutscene_home_event3a")
 	await dialogue_requested
 	cutscene_player.pause()
+	
 	Dialogic.start("home_event1e")
 	await Dialogic.timeline_ended
-	
 	
 	cutscene_player.play("cutscene_home_event3a")
 	await dialogue_requested
 	cutscene_player.pause()
+	
 	Dialogic.start("home_event1f")
 	await Dialogic.timeline_ended
 	
@@ -43,6 +44,11 @@ func _on_interacted(id: String) -> void:
 	match id:
 		"intro_bath":
 			Game.set_state(Game.State.CUTSCENE)
+			
+			TransitionManager.fade_out()
+			
+			await TransitionManager.transition_in_complete
+			
 			Dialogic.start("home_event1c")
 			await get_tree().create_timer(1.2).timeout
 			Game.flags["bf_dialogue_available"] = false

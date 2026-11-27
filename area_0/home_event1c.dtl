@@ -1,5 +1,4 @@
-[background arg="#0e061cff" fade="1.0"]
-[background arg="#0e061cff" fade="0.0"]
+[background arg="#0e061cff" fade="0.0" wait="true"]
 [wait time="3.0"]
 [background arg="res://game_resources/cgs/home_1a.png" fade="1.0" wait="true"]
 When I walked into the kitchen, his proud smile greeted me.
@@ -15,3 +14,6 @@ mc: ...Y-You say such things so easily...
 My boyfriend is a great man.
 I don't know why I have this nagging feeling in my chest whenever we are together...
 Sometimes I feel like I'm not doing enough like he is.
+[background arg="#0e061cff" fade="1.0" wait="true"]
+[background arg="#0e061cff" fade="0.0" wait="true"]
+[wait time="3.0"]

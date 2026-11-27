@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://de1p1wa22fr2v"]
+
+[ext_resource type="Shader" uid="uid://mf4lyelidlm2" path="res://game_resources/paper_overlay_shader.gdshader" id="1_4bljc"]
+[ext_resource type="Texture2D" uid="uid://cmtvix3p0hg4k" path="res://icon.svg" id="2_jveyy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jso0p"]
+shader = ExtResource("1_4bljc")
+shader_parameter/noise_scale = 4.0
+shader_parameter/sepia_strength = 0.85
+shader_parameter/contrast = 1.2
+shader_parameter/alpha = 1.0
+shader_parameter/glow_range = 12.0
+shader_parameter/glow_strength = 0.75
+shader_parameter/glow_falloff = 2.0
+shader_parameter/dirt_strength = 0.4
+shader_parameter/dirt_scale = 8.0
+
+[sub_resource type="GDScript" id="GDScript_fkj8f"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="PaperOverlayShader" type="Sprite2D" unique_id=1470424191]
+material = SubResource("ShaderMaterial_jso0p")
+texture = ExtResource("2_jveyy")
+script = SubResource("GDScript_fkj8f")

@@ -1,3 +1,32 @@
 [gd_scene format=3 uid="uid://dvs8pbhkkr45i"]
 
-[node name="Save" type="Node2D" unique_id=721988666]
+[ext_resource type="PackedScene" uid="uid://cv32xrn74w5a7" path="res://game_resources/ui_elements/menu_frame.tscn" id="1_mgslx"]
+
+[node name="Save" type="CanvasLayer" unique_id=563886379]
+
+[node name="Anchor" type="Control" parent="." unique_id=464738509]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuFrame" parent="Anchor" unique_id=2005478173 instance=ExtResource("1_mgslx")]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+
+[node name="Header" parent="Anchor/MenuFrame" index="0" unique_id=96366412]
+modulate = Color(0.8039216, 0.45882353, 0.6156863, 1)
+
+[node name="MenuTitle" parent="Anchor/MenuFrame/Header" index="1" unique_id=1679761798]
+text = "SAVE"
+
+[editable path="Anchor/MenuFrame"]

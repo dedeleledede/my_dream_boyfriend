@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var default_focus: TextureButton = $Panel/VBoxContainer/save/TextureButton
+@onready var default_focus: TextureButton = $Anchor/Panel/VBoxContainer/save/TextureButton
 
 func _ready() -> void:
 	default_focus.grab_focus()

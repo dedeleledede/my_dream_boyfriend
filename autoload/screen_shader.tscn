@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6gb3k3uray78"]
+
+[ext_resource type="Shader" uid="uid://mf4lyelidlm2" path="res://game_resources/paper_overlay_shader.gdshader" id="1_n65h3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mm5ja"]
+shader = ExtResource("1_n65h3")
+shader_parameter/noise_scale = 7.0330002865675
+shader_parameter/sepia_strength = 0.0
+shader_parameter/contrast = 1.0
+shader_parameter/alpha = 0.6490000308275
+shader_parameter/glow_range = 0.0
+shader_parameter/glow_strength = 0.0
+shader_parameter/glow_falloff = 0.0
+shader_parameter/dirt_strength = 0.1590000075525
+shader_parameter/dirt_scale = 100.0
+
+[node name="ScreenShader" type="CanvasLayer" unique_id=579030047]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2006584671]
+material = SubResource("ShaderMaterial_mm5ja")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

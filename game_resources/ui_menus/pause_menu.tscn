@@ -12,28 +12,47 @@
 process_mode = 2
 script = ExtResource("1_7d1xp")
 
-[node name="MenuFrame" parent="." unique_id=2005478173 instance=ExtResource("2_u0d6h")]
+[node name="Anchor" type="Control" parent="." unique_id=1133842735]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Header" parent="MenuFrame" index="0" unique_id=96366412]
+[node name="MenuFrame" parent="Anchor" unique_id=2005478173 instance=ExtResource("2_u0d6h")]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+
+[node name="Header" parent="Anchor/MenuFrame" index="0" unique_id=96366412]
 modulate = Color(0.972549, 0.92941177, 0.76862746, 1)
 
-[node name="MenuTitle" parent="MenuFrame/Header" index="1" unique_id=1679761798]
+[node name="MenuTitle" parent="Anchor/MenuFrame/Header" index="1" unique_id=1679761798]
 text = "PAUSED"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=380106179]
+[node name="TextureRect" type="TextureRect" parent="Anchor" unique_id=380106179]
+layout_mode = 0
 offset_right = 2048.0
 offset_bottom = 2048.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_p5okb")
 
-[node name="Panel" type="Panel" parent="." unique_id=694807494]
+[node name="Panel" type="Panel" parent="Anchor" unique_id=694807494]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 152.0
 offset_right = 464.0
 offset_bottom = 640.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_iivr6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=480062116]
+[node name="VBoxContainer" type="VBoxContainer" parent="Anchor/Panel" unique_id=480062116]
 layout_mode = 0
 offset_top = 64.0
 offset_right = 632.0
@@ -41,38 +60,39 @@ offset_bottom = 1008.0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = 250
 
-[node name="save" parent="Panel/VBoxContainer" unique_id=668693985 instance=ExtResource("3_htmss")]
+[node name="save" parent="Anchor/Panel/VBoxContainer" unique_id=668693985 instance=ExtResource("3_htmss")]
 layout_mode = 2
 
-[node name="TextureButton" parent="Panel/VBoxContainer/save" index="0" unique_id=949703461]
+[node name="TextureButton" parent="Anchor/Panel/VBoxContainer/save" index="0" unique_id=949703461]
 button_text = "Save"
 
-[node name="inventory" parent="Panel/VBoxContainer" unique_id=1865926794 instance=ExtResource("3_htmss")]
+[node name="inventory" parent="Anchor/Panel/VBoxContainer" unique_id=1865926794 instance=ExtResource("3_htmss")]
 layout_mode = 2
 
-[node name="TextureButton" parent="Panel/VBoxContainer/inventory" index="0" unique_id=949703461]
+[node name="TextureButton" parent="Anchor/Panel/VBoxContainer/inventory" index="0" unique_id=949703461]
 button_text = "Inventory"
 
-[node name="option" parent="Panel/VBoxContainer" unique_id=385869144 instance=ExtResource("3_htmss")]
+[node name="option" parent="Anchor/Panel/VBoxContainer" unique_id=385869144 instance=ExtResource("3_htmss")]
 layout_mode = 2
 
-[node name="TextureButton" parent="Panel/VBoxContainer/option" index="0" unique_id=949703461]
+[node name="TextureButton" parent="Anchor/Panel/VBoxContainer/option" index="0" unique_id=949703461]
 button_text = "Options"
 
-[node name="exit" parent="Panel/VBoxContainer" unique_id=1911306201 instance=ExtResource("3_htmss")]
+[node name="exit" parent="Anchor/Panel/VBoxContainer" unique_id=1911306201 instance=ExtResource("3_htmss")]
 layout_mode = 2
 
-[node name="TextureButton" parent="Panel/VBoxContainer/exit" index="0" unique_id=949703461]
+[node name="TextureButton" parent="Anchor/Panel/VBoxContainer/exit" index="0" unique_id=949703461]
 button_text = "Exit"
 
-[node name="LovemeterGauge" parent="." unique_id=2080986599 instance=ExtResource("5_57jg7")]
-offset_left = 144.0
-offset_top = 747.0
-offset_right = 144.0
-offset_bottom = 747.0
+[node name="LovemeterGauge" parent="Anchor" unique_id=2080986599 instance=ExtResource("5_57jg7")]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 709.0
+offset_right = 182.0
+offset_bottom = 709.0
 
-[editable path="MenuFrame"]
-[editable path="Panel/VBoxContainer/save"]
-[editable path="Panel/VBoxContainer/inventory"]
-[editable path="Panel/VBoxContainer/option"]
-[editable path="Panel/VBoxContainer/exit"]
+[editable path="Anchor/MenuFrame"]
+[editable path="Anchor/Panel/VBoxContainer/save"]
+[editable path="Anchor/Panel/VBoxContainer/inventory"]
+[editable path="Anchor/Panel/VBoxContainer/option"]
+[editable path="Anchor/Panel/VBoxContainer/exit"]

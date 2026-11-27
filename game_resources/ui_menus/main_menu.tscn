@@ -1,3 +1,175 @@
 [gd_scene format=3 uid="uid://d3ne0skfah41h"]
 
-[node name="MainMenu" type="Node2D" unique_id=661304275]
+[ext_resource type="Texture2D" uid="uid://br0114oih4pmb" path="res://ui_resources/mainmenu_bg.png" id="1_p16j0"]
+[ext_resource type="Texture2D" uid="uid://c548duo1vfhck" path="res://ui_resources/logodreambf.png" id="2_0qq0q"]
+[ext_resource type="Texture2D" uid="uid://de0b5wj8h7hvd" path="res://ui_resources/mainmenu_box.png" id="2_875om"]
+[ext_resource type="Texture2D" uid="uid://n3ehomvyenxo" path="res://ui_resources/mainmenu_option_selected.png" id="4_0qq0q"]
+[ext_resource type="FontFile" uid="uid://rql3usnjwjvy" path="res://game_resources/font/PixelifySans-Bold.ttf" id="4_85yku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jso0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85yku"]
+bg_color = Color(0.05490196, 0.023529412, 0.10980392, 0.4392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iivr6"]
+texture = ExtResource("4_0qq0q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rxfa"]
+texture = ExtResource("4_0qq0q")
+
+[sub_resource type="Animation" id="Animation_85yku"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Control/Logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1rxfa"]
+resource_name = "logo_float"
+length = 1.3666667
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Control/Logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3666667),
+"transitions": PackedFloat32Array(0.8122524, 2.639017),
+"update": 0,
+"values": [Vector2(35, 0), Vector2(35, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmnpy"]
+_data = {
+&"RESET": SubResource("Animation_85yku"),
+&"logo_float": SubResource("Animation_1rxfa")
+}
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1603667372]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1284490119]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_p16j0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1140829450]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 35
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1320140658]
+custom_minimum_size = Vector2(0, 920)
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="VBoxContainer/Control" unique_id=1697314363]
+custom_maximum_size = Vector2(1976.667, 918.333)
+layout_mode = 0
+offset_left = 35.0
+offset_right = 2011.667
+offset_bottom = 918.333
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_0qq0q")
+
+[node name="MenuBackground" type="TextureRect" parent="VBoxContainer" unique_id=485401100]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_875om")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=636504594]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_85yku")
+theme_override_font_sizes/font_size = 44
+text = "V1.0 By Isa, Isa."
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=430208548]
+offset_left = 319.0
+offset_top = 486.0
+offset_right = 708.0
+offset_bottom = 904.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1576026736]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=656168386]
+custom_minimum_size = Vector2(340, 84)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("4_85yku")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jso0p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_85yku")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iivr6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1rxfa")
+text = "NEW GAME"
+
+[node name="Load" type="Button" parent="MarginContainer/VBoxContainer" unique_id=758087921]
+custom_minimum_size = Vector2(340, 84)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("4_85yku")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jso0p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_85yku")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iivr6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1rxfa")
+text = "LOAD"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=996099151]
+custom_minimum_size = Vector2(340, 84)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("4_85yku")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jso0p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_85yku")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iivr6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1rxfa")
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1077305480]
+custom_minimum_size = Vector2(340, 84)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("4_85yku")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jso0p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_85yku")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iivr6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1rxfa")
+text = "QUIT
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=573959162]
+libraries/ = SubResource("AnimationLibrary_xmnpy")
+autoplay = &"logo_float"
