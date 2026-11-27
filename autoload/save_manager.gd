@@ -25,7 +25,9 @@ func reset_data() -> void:
 		"inventory": {},
 		"unlocked_doors": {},
 		"collected_pickups": {},
-		"flags": {}
+		"flags": {},
+		"consumed_interactables": {},
+		"unlocked_interactables":{}
 	}
 
 

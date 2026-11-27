@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dvs8pbhkkr45i"]
 
+[ext_resource type="Script" uid="uid://dxo1r2du0tcdt" path="res://game_resources/ui_menus/save_menu.gd" id="1_5gn37"]
 [ext_resource type="PackedScene" uid="uid://cv32xrn74w5a7" path="res://game_resources/ui_elements/menu_frame.tscn" id="1_mgslx"]
+[ext_resource type="PackedScene" uid="uid://dyx0chrdvutek" path="res://game_resources/save_slot.tscn" id="2_p03ie"]
 
 [node name="Save" type="CanvasLayer" unique_id=563886379]
+script = ExtResource("1_5gn37")
 
 [node name="Anchor" type="Control" parent="." unique_id=464738509]
 layout_mode = 3
@@ -28,5 +31,29 @@ modulate = Color(0.8039216, 0.45882353, 0.6156863, 1)
 
 [node name="MenuTitle" parent="Anchor/MenuFrame/Header" index="1" unique_id=1679761798]
 text = "SAVE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Anchor" unique_id=351555993]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15039063
+anchor_top = 0.15039063
+anchor_right = 0.9316406
+anchor_bottom = 0.92578125
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 280
+metadata/_edit_use_anchors_ = true
+
+[node name="SaveSlot1" parent="Anchor/VBoxContainer" unique_id=2021591436 instance=ExtResource("2_p03ie")]
+layout_mode = 2
+focus_mode = 2
+
+[node name="SaveSlot2" parent="Anchor/VBoxContainer" unique_id=1005043506 instance=ExtResource("2_p03ie")]
+layout_mode = 2
+focus_mode = 2
+
+[node name="SaveSlot3" parent="Anchor/VBoxContainer" unique_id=802775989 instance=ExtResource("2_p03ie")]
+layout_mode = 2
+focus_mode = 2
 
 [editable path="Anchor/MenuFrame"]

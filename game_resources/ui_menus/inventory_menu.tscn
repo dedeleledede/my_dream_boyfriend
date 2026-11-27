@@ -1,3 +1,225 @@
 [gd_scene format=3 uid="uid://cstdcrs6heigt"]
 
+[ext_resource type="PackedScene" uid="uid://cv32xrn74w5a7" path="res://game_resources/ui_elements/menu_frame.tscn" id="1_rcvct"]
+[ext_resource type="Texture2D" uid="uid://btnftu6rs5lof" path="res://ui_resources/frame_decor.png" id="2_o64um"]
+[ext_resource type="Texture2D" uid="uid://j6xnjb8c6q7c" path="res://ui_resources/inventory_descbox.png" id="3_1tib0"]
+[ext_resource type="FontFile" uid="uid://cj5nl5ejy0b2d" path="res://game_resources/font/PixelifySans-Regular.ttf" id="3_3xfja"]
+[ext_resource type="FontFile" uid="uid://rql3usnjwjvy" path="res://game_resources/font/PixelifySans-Bold.ttf" id="4_328dd"]
+[ext_resource type="PackedScene" uid="uid://bvo6pbdi1vuxr" path="res://game_resources/inventory_slot.tscn" id="4_j0af5"]
+[ext_resource type="Texture2D" uid="uid://b50wy8t4uylkp" path="res://ui_resources/confirmbutton.png" id="4_wh5o3"]
+
+[sub_resource type="Animation" id="Animation_328dd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Control/ConfirmButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(578, 93)]
+}
+
+[sub_resource type="Animation" id="Animation_rcvct"]
+resource_name = "confirm_float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Control/ConfirmButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(578, 93), Vector2(578, 90)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o64um"]
+_data = {
+&"RESET": SubResource("Animation_328dd"),
+&"confirm_float": SubResource("Animation_rcvct")
+}
+
 [node name="Inventory" type="CanvasLayer" unique_id=770108701]
+
+[node name="Anchor" type="Control" parent="." unique_id=1717505044]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuFrame" parent="Anchor" unique_id=2005478173 instance=ExtResource("1_rcvct")]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+
+[node name="Header" parent="Anchor/MenuFrame" index="0" unique_id=96366412]
+modulate = Color(0.8901961, 0.93333334, 0.69411767, 1)
+
+[node name="MenuTitle" parent="Anchor/MenuFrame/Header" index="1" unique_id=1679761798]
+text = "INVENTORY"
+
+[node name="FrameDeco2" type="TextureRect" parent="Anchor/MenuFrame" unique_id=1781165830]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o64um")
+flip_h = true
+
+[node name="Content" type="Control" parent="Anchor" unique_id=800007916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Reminder" type="RichTextLabel" parent="Anchor/Content" unique_id=1191698381]
+custom_maximum_size = Vector2(615, -1)
+layout_mode = 0
+offset_left = 181.0
+offset_top = 377.0
+offset_right = 796.0
+offset_bottom = 406.0
+theme_override_colors/default_color = Color(0.9882353, 1, 0.9764706, 1)
+theme_override_fonts/normal_font = ExtResource("3_3xfja")
+bbcode_enabled = true
+text = "> Press   [b]Z[/b]   to  inspect  item"
+
+[node name="MarginContainer" type="MarginContainer" parent="Anchor/Content" unique_id=1611956890]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = -397.0
+offset_right = 377.0
+offset_bottom = 522.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Anchor/Content/MarginContainer" unique_id=769293059]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Control" type="Control" parent="Anchor/Content/MarginContainer/VBoxContainer" unique_id=550844549]
+custom_minimum_size = Vector2(671, 188)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DescriptionBox" type="TextureRect" parent="Anchor/Content/MarginContainer/VBoxContainer/Control" unique_id=580216664]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 4.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1tib0")
+
+[node name="Content" type="MarginContainer" parent="Anchor/Content/MarginContainer/VBoxContainer/Control/DescriptionBox" unique_id=304691597]
+custom_maximum_size = Vector2(675, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 8.0
+offset_right = 672.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(670, 186)
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Description" type="Label" parent="Anchor/Content/MarginContainer/VBoxContainer/Control/DescriptionBox/Content" unique_id=1437653496]
+custom_maximum_size = Vector2(615, -1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9882353, 1, 0.9764706, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("4_328dd")
+theme_override_font_sizes/font_size = 20
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum accumsan facilisis. Donec semper feugiat luctus. Etiam ac enim fermentum, congue ante ac, cursus tortor. Nulla ut dui tincidunt, iaculis velit nec, pulvinar enim."
+autowrap_mode = 3
+
+[node name="ConfirmButton" type="TextureRect" parent="Anchor/Content/MarginContainer/VBoxContainer/Control" unique_id=790787257]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -95.0
+offset_right = 15.0
+offset_bottom = 15.000229
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(108, 110)
+texture = ExtResource("4_wh5o3")
+
+[node name="GridContainer" type="GridContainer" parent="Anchor/Content/MarginContainer/VBoxContainer" unique_id=1905309810]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 40
+columns = 3
+
+[node name="InventorySlot" parent="Anchor/Content/MarginContainer/VBoxContainer/GridContainer" unique_id=1355243891 instance=ExtResource("4_j0af5")]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Anchor/Content/MarginContainer/VBoxContainer/GridContainer" unique_id=1377638085 instance=ExtResource("4_j0af5")]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Anchor/Content/MarginContainer/VBoxContainer/GridContainer" unique_id=1712215028 instance=ExtResource("4_j0af5")]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Anchor/Content/MarginContainer/VBoxContainer/GridContainer" unique_id=1570556950 instance=ExtResource("4_j0af5")]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Anchor/Content/MarginContainer/VBoxContainer/GridContainer" unique_id=63449991 instance=ExtResource("4_j0af5")]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Anchor/Content/MarginContainer/VBoxContainer/GridContainer" unique_id=1023061648 instance=ExtResource("4_j0af5")]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anchor" unique_id=1095207837]
+root_node = NodePath("../Content")
+libraries/ = SubResource("AnimationLibrary_o64um")
+autoplay = &"confirm_float"
+
+[editable path="Anchor/MenuFrame"]

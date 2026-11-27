@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bvo6pbdi1vuxr"]
+
+[ext_resource type="Texture2D" uid="uid://c86jwkivnrl6" path="res://ui_resources/inventory_slot.png" id="1_8hre7"]
+[ext_resource type="Texture2D" uid="uid://udmphngl8ik0" path="res://ui_resources/inventory_slot_indicator.png" id="2_p780p"]
+
+[node name="InventorySlot" type="Control" unique_id=1355243891]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemFrame" type="TextureRect" parent="." unique_id=605990745]
+custom_minimum_size = Vector2(166, 148)
+layout_mode = 1
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(83, 74)
+texture = ExtResource("1_8hre7")
+
+[node name="Item" type="TextureRect" parent="ItemFrame" unique_id=601697021]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.518
+anchor_top = 0.5
+anchor_right = 0.518
+anchor_bottom = 0.5
+offset_left = -63.988
+offset_top = -64.0
+offset_right = 64.012
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Indicator" type="TextureRect" parent="ItemFrame" unique_id=189562281]
+visible = false
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 148.0
+texture = ExtResource("2_p780p")

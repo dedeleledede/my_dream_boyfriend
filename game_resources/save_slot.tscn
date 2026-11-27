@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dyx0chrdvutek"]
 
+[ext_resource type="Script" uid="uid://kh6u5ohrfxf0" path="res://game_resources/save_slot.gd" id="1_r7t6b"]
 [ext_resource type="Texture2D" uid="uid://djhhxluq6sntn" path="res://ui_resources/saveslot_empty_selected.png" id="1_uy5qi"]
 [ext_resource type="Texture2D" uid="uid://b80p4olwukf6m" path="res://ui_resources/saveslot_empty_idle.png" id="2_iobe2"]
+[ext_resource type="FontFile" uid="uid://cj5nl5ejy0b2d" path="res://game_resources/font/PixelifySans-Regular.ttf" id="3_025kq"]
 [ext_resource type="Texture2D" uid="uid://dhoef3ejb42r2" path="res://ui_resources/saveslot_full_idle.png" id="3_jxb7i"]
 [ext_resource type="Texture2D" uid="uid://gwmd3w3hv7ma" path="res://ui_resources/saveslot_full_selected.png" id="4_025kq"]
+[ext_resource type="PackedScene" uid="uid://dsuelamhytdpl" path="res://game_resources/ui_elements/lovemeter_gauge.tscn" id="7_iuf7x"]
 
 [node name="SaveSlot" type="Control" unique_id=2021591436]
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(0.5, 0.5)
+script = ExtResource("1_r7t6b")
 
 [node name="EmptySlot" type="TextureButton" parent="." unique_id=515214844]
 layout_mode = 0
@@ -19,10 +22,65 @@ texture_normal = ExtResource("1_uy5qi")
 texture_hover = ExtResource("2_iobe2")
 texture_focused = ExtResource("2_iobe2")
 
+[node name="SaveQuestion" type="Label" parent="EmptySlot" unique_id=1579220944]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_top = 64.0
+offset_right = 203.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("3_025kq")
+theme_override_font_sizes/font_size = 36
+text = "SAVE?"
+
 [node name="FilledSlot" type="TextureButton" parent="." unique_id=786536716]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("3_jxb7i")
 texture_hover = ExtResource("4_025kq")
 texture_focused = ExtResource("4_025kq")
+
+[node name="OverwriteQuestion" type="Label" parent="FilledSlot" unique_id=1697821507]
+visible = false
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 259.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("3_025kq")
+theme_override_font_sizes/font_size = 36
+text = "OVERWRITE?"
+
+[node name="SlotFull" type="Label" parent="FilledSlot" unique_id=108023315]
+visible = false
+layout_mode = 0
+offset_left = 73.0
+offset_top = 64.0
+offset_right = 283.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.05490196, 0.023529412, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("3_025kq")
+theme_override_font_sizes/font_size = 36
+text = "Slot Full"
+
+[node name="LovemeterGauge" parent="FilledSlot" unique_id=2080986599 instance=ExtResource("7_iuf7x")]
+visible = false
+layout_mode = 0
+offset_left = 163.0
+offset_top = 151.0
+offset_right = 163.0
+offset_bottom = 151.0
+
+[connection signal="focus_entered" from="EmptySlot" to="." method="_on_empty_slot_focus_entered"]
+[connection signal="focus_exited" from="EmptySlot" to="." method="_on_empty_slot_focus_exited"]
+[connection signal="mouse_entered" from="EmptySlot" to="." method="_on_empty_slot_mouse_entered"]
+[connection signal="mouse_exited" from="EmptySlot" to="." method="_on_empty_slot_mouse_exited"]
+[connection signal="pressed" from="EmptySlot" to="." method="_on_empty_slot_pressed"]
+[connection signal="focus_entered" from="FilledSlot" to="." method="_on_filled_slot_focus_entered"]
+[connection signal="focus_exited" from="FilledSlot" to="." method="_on_filled_slot_focus_exited"]
+[connection signal="mouse_entered" from="FilledSlot" to="." method="_on_filled_slot_mouse_entered"]
+[connection signal="mouse_exited" from="FilledSlot" to="." method="_on_filled_slot_mouse_exited"]

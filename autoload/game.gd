@@ -3,12 +3,15 @@ extends Node
 @onready var pause_menu_scene: PackedScene = preload("res://game_resources/ui_menus/pause_menu.tscn")
 var pause_menu: Node = null
 
+#stuff to save
+
 var flags := {
+	"lovemeterstage": 0,
 	"home_stage": 1,
 	"bf_dialogue_available": false,
 	"home_event1_1": false,
 	"home_event1_2": true, #setting it to true first to lock it until requirements are met 
-	"home_event1_3": true,
+	"home_event1_3": true, #notice how subsequential events in the same area are locked
 	"home_event2": false,
 	"home_event3": false,
 	"ending_event_dream": false,
@@ -16,10 +19,12 @@ var flags := {
 	"ending_event_lucid":false}
 	
 #----------------------
-
+#consumed are interactables that are destroyable on use and have been destroyed
 var consumed_interactables: Dictionary = {}
-
+#unlocked are interactables that need something to happen before being interactable
 var unlocked_interactables: Dictionary = {}
+
+#----------------------
 
 signal interacted(id: String)
 

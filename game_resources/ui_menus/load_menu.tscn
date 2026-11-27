@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2h7dnxjejm2e"]
 
 [ext_resource type="PackedScene" uid="uid://cv32xrn74w5a7" path="res://game_resources/ui_elements/menu_frame.tscn" id="1_x4pjt"]
+[ext_resource type="PackedScene" uid="uid://dyx0chrdvutek" path="res://game_resources/save_slot.tscn" id="2_p3cq8"]
 
 [node name="Load" type="CanvasLayer" unique_id=1047987350]
 
@@ -28,5 +29,25 @@ modulate = Color(0.49411765, 0.5254902, 0.8862745, 1)
 
 [node name="MenuTitle" parent="Anchor/MenuFrame/Header" index="1" unique_id=1679761798]
 text = "LOAD"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=271427701]
+anchors_preset = -1
+anchor_left = 0.15039063
+anchor_top = 0.15039063
+anchor_right = 0.9316406
+anchor_bottom = 0.92578125
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 280
+metadata/_edit_use_anchors_ = true
+
+[node name="SaveSlot" parent="VBoxContainer" unique_id=2021591436 instance=ExtResource("2_p3cq8")]
+layout_mode = 2
+
+[node name="SaveSlot2" parent="VBoxContainer" unique_id=1024308095 instance=ExtResource("2_p3cq8")]
+layout_mode = 2
+
+[node name="SaveSlot3" parent="VBoxContainer" unique_id=618149867 instance=ExtResource("2_p3cq8")]
+layout_mode = 2
 
 [editable path="Anchor/MenuFrame"]
